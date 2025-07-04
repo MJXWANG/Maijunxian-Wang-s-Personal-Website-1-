@@ -179,7 +179,7 @@
 
   <div class="container" id="content-cn" style="display: none">
     <div class="intro">
-      <img src="image.jpg" alt="Maijunxian Wang" />
+      <img src="Maijunxian_Wang.jpg" alt="Maijunxian Wang" />
       <div>
         <h1>王麦俊贤</h1>
         <p>
@@ -196,8 +196,15 @@
 
   <script>
     function toggleTheme() {
-      document.documentElement.toggleAttribute("data-theme", "dark");
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      if (current === "dark") {
+        html.removeAttribute("data-theme");
+      } else {
+        html.setAttribute("data-theme", "dark");
+      }
     }
+
     function toggleLanguage() {
       const en = document.getElementById("content-en");
       const cn = document.getElementById("content-cn");
