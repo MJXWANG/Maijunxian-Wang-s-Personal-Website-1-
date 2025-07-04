@@ -8,79 +8,118 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Asap', sans-serif;
-            background: #f5f7fa;
+            background: #f9fafa;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
             padding: 2em;
         }
+        .intro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2em;
+            flex-wrap: wrap;
+        }
+        .intro img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin-bottom: 0.2em;
         }
         h2 {
             border-bottom: 2px solid #ddd;
             padding-bottom: 0.2em;
+            margin-top: 2.5em;
         }
         p {
             line-height: 1.6;
         }
-        .section {
-            margin-top: 2.5em;
+        ul {
+            padding-left: 1em;
         }
-        .projects ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .projects li {
-            margin-bottom: 1.2em;
+        li {
+            margin-bottom: 1em;
         }
         a {
             color: #2a7ae2;
             text-decoration: none;
         }
+        a:hover {
+            text-decoration: underline;
+        }
         .contact a {
+            display: inline-block;
             margin-right: 1em;
+            margin-bottom: 0.5em;
+        }
+        .section {
+            margin-top: 2em;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Maijunxian (Mai) Wang</h1>
-        <p>Hi! I’m a Cognitive Science student (computational emphasis), currently studying at <strong>UC Berkeley</strong>. Previously, I was involved in the Grow AI initiative, UCD L3 Lab, and the ASPIRE program at <strong>UC Davis</strong>. My research spans from machine cognition and AI alignment to the societal implications of artificial intelligence. </p>
-        <p>After transferring to UC Berkeley, I continue to explore cognitive architectures and generative models for AI. My goal is to create general, powerful, trustworthy, and interpretable artificial intelligence. I believe AI is a mirror of human intelligence — studying it reflects back on human civilization and wisdom.</p>
-    </header>
+    <div class="container">
+        <div class="intro">
+            <img src="image.jpg" alt="Maijunxian Wang">
+            <div>
+                <h1>Maijunxian (Mai) Wang</h1>
+                <p>
+                    Hi! I’m a Cognitive Science student (computational emphasis), currently studying at <strong>UC Berkeley</strong>.
+                    Previously, I was involved in the Grow AI initiative, UCD L3 Lab, and the ASPIRE program at <strong>UC Davis</strong>.
+                    My research spans from machine cognition and AI alignment to the societal implications of artificial intelligence.
+                </p>
+                <p>
+                    After transferring to UC Berkeley, I continue to explore cognitive architectures and generative models for AI.
+                    My goal is to create general, powerful, trustworthy, and interpretable artificial intelligence.
+                    I believe AI is a mirror of human intelligence — studying it reflects back on human civilization and wisdom.
+                </p>
+            </div>
+        </div>
 
-    <div class="section">
-        <h2>Research Interests</h2>
-        <p>Social justice, Artificial General Intelligence (AGI), AI alignment, AI ethics, machine cognition</p>
-    </div>
+        <div class="section">
+            <h2>Research Interests</h2>
+            <p>Social justice, Artificial General Intelligence (AGI), AI alignment, AI ethics, machine cognition</p>
+        </div>
 
-    <div class="section projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <strong>Machine Cognition:</strong><br>
-                <a href="#">Machine Psychophysics: Cognitive Control in Vision-Language Models (Preprint)</a>
-            </li>
-            <li>
-                <strong>Artificial General Intelligence:</strong><br>
-                <a href="#">From understanding the world to intervening in it: A unified multi-scale framework for embodied cognition (Preprint)</a>
-            </li>
-            <li>
-                <strong>Social Justice:</strong><br>
-                <a href="#">The Quantified Body: Identity, Empowerment, and Control in Smart Wearables (Preprint)</a>
-            </li>
-        </ul>
-    </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <strong>Machine Cognition:</strong><br>
+                    <a href="#">Machine Psychophysics: Cognitive Control in Vision-Language Models (Preprint)</a>
+                </li>
+                <li>
+                    <strong>Artificial General Intelligence:</strong><br>
+                    <a href="#">From understanding the world to intervening in it: A unified multi-scale framework for embodied cognition (Preprint)</a>
+                </li>
+                <li>
+                    <strong>Social Justice:</strong><br>
+                    <a href="#">The Quantified Body: Identity, Empowerment, and Control in Smart Wearables (Preprint)</a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="section contact">
-        <h2>Contact & Links</h2>
-        <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
-        <p>Email: <code>hokind@andrew.cmu.edu</code> (update if needed)</p>
+        <div class="section contact">
+            <h2>Contact & Links</h2>
+            <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
+            <p>Email: <code>mjxwang@berkeley.edu</code></p>
+        </div>
     </div>
 </body>
 </html>
