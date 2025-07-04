@@ -1,125 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maijunxian Wang</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Asap', sans-serif;
-            background: #f9fafa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 960px;
-            margin: auto;
-            padding: 2em;
-        }
-        .intro {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 2em;
-            flex-wrap: wrap;
-        }
-        .intro img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 0.2em;
-        }
-        h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.2em;
-            margin-top: 2.5em;
-        }
-        p {
-            line-height: 1.6;
-        }
-        ul {
-            padding-left: 1em;
-        }
-        li {
-            margin-bottom: 1em;
-        }
-        a {
-            color: #2a7ae2;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact a {
-            display: inline-block;
-            margin-right: 1em;
-            margin-bottom: 0.5em;
-        }
-        .section {
-            margin-top: 2em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maijunxian Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #f9fafa;
+      --text-color: #333;
+      --link-color: #2a7ae2;
+      --card-bg: #fff;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --link-color: #8ab4f8;
+      --card-bg: #1e1e1e;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Asap', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2em;
+    }
+    .intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+    .intro img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.2em;
+      margin-top: 2.5em;
+    }
+    p {
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 1em;
+    }
+    li {
+      margin-bottom: 1.5em;
+      background: var(--card-bg);
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    li:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact a {
+      display: inline-block;
+      margin-right: 1em;
+      margin-bottom: 0.5em;
+    }
+    .section {
+      margin-top: 2em;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+    }
+    .thumb {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 0.5em;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="intro">
-            <img src="image.jpg" alt="Maijunxian Wang">
-            <div>
-                <h1>Maijunxian (Mai) Wang</h1>
-                <p>
-                    Hi! I’m a Cognitive Science student (computational emphasis), currently studying at <strong>UC Berkeley</strong>.
-                    Previously, I was involved in the Grow AI initiative, UCD L3 Lab, and the ASPIRE program at <strong>UC Davis</strong>.
-                    My research spans from machine cognition and AI alignment to the societal implications of artificial intelligence.
-                </p>
-                <p>
-                    After transferring to UC Berkeley, I continue to explore cognitive architectures and generative models for AI.
-                    My goal is to create general, powerful, trustworthy, and interpretable artificial intelligence.
-                    I believe AI is a mirror of human intelligence — studying it reflects back on human civilization and wisdom.
-                </p>
-            </div>
-        </div>
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">🌗 Toggle Theme</button>
+  </div>
+  <div class="lang-switch">
+    <button onclick="toggleLanguage()">🌐 中文 / English</button>
+  </div>
 
-        <div class="section">
-            <h2>Research Interests</h2>
-            <p>Social justice, Artificial General Intelligence (AGI), AI alignment, AI ethics, machine cognition</p>
-        </div>
-
-        <div class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <strong>Machine Cognition:</strong><br>
-                    <a href="#">Machine Psychophysics: Cognitive Control in Vision-Language Models (Preprint)</a>
-                </li>
-                <li>
-                    <strong>Artificial General Intelligence:</strong><br>
-                    <a href="#">From understanding the world to intervening in it: A unified multi-scale framework for embodied cognition (Preprint)</a>
-                </li>
-                <li>
-                    <strong>Social Justice:</strong><br>
-                    <a href="#">The Quantified Body: Identity, Empowerment, and Control in Smart Wearables (Preprint)</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="section contact">
-            <h2>Contact & Links</h2>
-            <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
-            <p>Email: <code>mjxwang@berkeley.edu</code></p>
-        </div>
+  <div class="container" id="content-en">
+    <div class="intro">
+      <img src="image.jpg" alt="Maijunxian Wang" />
+      <div>
+        <h1>Maijunxian (Mai) Wang</h1>
+        <p>
+          Hi! I’m a Cognitive Science student (computational emphasis), currently studying at <strong>UC Berkeley</strong>.
+          Previously, I was involved in the Grow AI initiative, UCD L3 Lab, and the ASPIRE program at <strong>UC Davis</strong>.
+          My research spans from machine cognition and AI alignment to the societal implications of artificial intelligence.
+        </p>
+        <p>
+          After transferring to UC Berkeley, I continue to explore cognitive architectures and generative models for AI.
+          My goal is to create general, powerful, trustworthy, and interpretable artificial intelligence.
+          I believe AI is a mirror of human intelligence — studying it reflects back on human civilization and wisdom.
+        </p>
+      </div>
     </div>
+
+    <div class="section">
+      <h2>Research Interests</h2>
+      <p>Social justice, Artificial General Intelligence (AGI), AI alignment, AI ethics, machine cognition</p>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Machine Cognition:</strong><br />
+          <a href="https://arxiv.org/abs/2505.18969" target="_blank">
+            Machine Psychophysics: Cognitive Control in Vision-Language Models (Preprint)
+          </a><br />
+          <img src="images/machine.jpg" alt="Machine Cognition" class="thumb" />
+        </li>
+        <li>
+          <strong>Artificial General Intelligence:</strong><br />
+          <a href="https://arxiv.org/abs/2503.00727" target="_blank">
+            From understanding the world to intervening in it: A unified multi-scale framework for embodied cognition (Preprint)
+          </a><br />
+          <img src="images/framework.jpg" alt="AGI Framework" class="thumb" />
+        </li>
+        <li>
+          <strong>Social Justice:</strong><br />
+          <a href="https://arxiv.org/abs/2506.15991" target="_blank">
+            The Quantified Body: Identity, Empowerment, and Control in Smart Wearables (Preprint)
+          </a><br />
+          <img src="images/quantified.jpg" alt="Quantified Body" class="thumb" />
+        </li>
+      </ul>
+    </div>
+
+    <div class="section contact">
+      <h2>Contact & Links</h2>
+      <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
+      <p>Email: <code>mjxwang@berkeley.edu</code></p>
+    </div>
+  </div>
+
+  <div class="container" id="content-cn" style="display: none">
+    <div class="intro">
+      <img src="image.jpg" alt="Maijunxian Wang" />
+      <div>
+        <h1>王麦俊贤</h1>
+        <p>
+          你好！我是一名加州大学伯克利分校的认知科学（计算方向）本科生。此前，我曾就读于加州大学戴维斯分校，参与 Grow AI 项目、L3 Lab 和 ASPIRE 研究计划。
+          我的研究兴趣包括机器认知、人工智能伦理、人工智能对齐以及社会公正等。
+        </p>
+        <p>
+          转学至伯克利后，我继续探索认知架构与生成模型，希望创造出通用、可信赖、可解释的人工智能系统。
+          我相信人工智能是人类智慧的一面镜子，研究它的过程，也是人类文明的回响。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.toggleAttribute("data-theme", "dark");
+    }
+    function toggleLanguage() {
+      const en = document.getElementById("content-en");
+      const cn = document.getElementById("content-cn");
+      if (en.style.display === "none") {
+        en.style.display = "block";
+        cn.style.display = "none";
+      } else {
+        en.style.display = "none";
+        cn.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
