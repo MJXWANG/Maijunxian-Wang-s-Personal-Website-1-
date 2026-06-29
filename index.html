@@ -43,14 +43,14 @@
       transition: background 0.3s, color 0.3s;
       -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 860px; margin: auto; padding: 4.5em 1.5em 5em; }
+    .container { max-width: 920px; margin: auto; padding: 4.5em 1.5em 5em; }
 
     /* language visibility */
     .cn { display: none; }
     body.lang-cn .en { display: none; }
     body.lang-cn .cn { display: initial; }
 
-    .controls { position: fixed; top: 1.1em; right: 1.1em; display: flex; gap: 0.5em; z-index: 10; }
+    .controls { position: fixed; top: 1.1em; right: 1.1em; display: flex; gap: 0.5em; z-index: 100; }
     .controls button {
       font-family: var(--sans); font-size: 0.8rem; color: var(--muted);
       background: var(--bg); border: 1px solid var(--rule); border-radius: 999px;
@@ -73,7 +73,7 @@
       text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);
       margin: 3.2em 0 0.4em; padding-bottom: 0.6em; border-bottom: 1px solid var(--rule);
     }
-    .legend { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin: 0 0 1.4em; }
+    .legend { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin: 0 0 1.5em; }
 
     a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     a:hover { border-bottom-color: var(--link); }
@@ -85,42 +85,55 @@
     .interests li { margin: 0 0 0.6em; padding-left: 1em; text-indent: -1em; break-inside: avoid; }
     .interests li::before { content: "—"; color: var(--muted); margin-right: 0.5em; }
 
-    /* publication cards — left thumbnail, text flows right & below */
-    .pubs { display: flex; flex-direction: column; gap: 1.1em; }
+    /* publication cards — media left (own column), text right; nothing wraps under the media */
+    .pubs { display: flex; flex-direction: column; gap: 1.3em; }
     .pub {
-      background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
-      padding: 1.05em 1.25em 1.1em;
+      display: flex; gap: 1.5em; align-items: flex-start;
+      background: var(--card); border: 1px solid var(--rule); border-radius: 14px;
+      padding: 1.3em 1.5em;
     }
-    .pub::after { content: ""; display: block; clear: both; }
-    img.pub-fig {
-      float: left; width: 232px; height: 152px; object-fit: cover; object-position: center top;
-      margin: 0.2em 1.25em 0.55em 0; border-radius: 8px; border: 1px solid var(--rule); background: #fff;
+    .pub--noimg { display: block; }
+    .pub-media { flex: 0 0 320px; }
+    .pub-media .zoom {
+      width: 320px; height: auto; display: block; border-radius: 9px; border: 1px solid var(--rule);
+      background: #fff; cursor: zoom-in; transform-origin: top left;
+      transition: transform .28s ease, box-shadow .28s ease;
     }
-    .pub-title { font-size: 1.16rem; font-weight: 600; margin: 0 0 0.4em; line-height: 1.3; }
+    .pub-media .zoom:hover {
+      transform: scale(1.95); position: relative; z-index: 30;
+      box-shadow: 0 14px 44px rgba(0,0,0,0.34); border-color: transparent;
+    }
+    .pub-text { flex: 1; min-width: 0; }
+    .pub-title { font-size: 1.26rem; font-weight: 600; margin: 0 0 0.45em; line-height: 1.3; }
+    .pub-title a { color: inherit; border-bottom: none; }
+    .pub-title a:hover { color: var(--link); }
     .venue {
-      display: inline-block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+      display: inline-block; font-family: var(--sans); font-size: 0.73rem; font-weight: 600;
       letter-spacing: 0.03em; background: var(--tag-bg); color: var(--tag-text);
-      border-radius: 4px; padding: 0.16em 0.55em; vertical-align: middle;
+      border-radius: 4px; padding: 0.18em 0.6em; vertical-align: middle;
     }
     .venue.pre { background: transparent; border: 1px solid var(--rule); }
-    .accolade { font-family: var(--sans); font-size: 0.8rem; color: #b3791f; margin: 0.5em 0 0; }
+    .accolade { font-family: var(--sans); font-size: 0.82rem; color: #b3791f; margin: 0.55em 0 0; }
     [data-theme="dark"] .accolade { color: #d9a441; }
-    .authors { font-size: 0.93rem; color: var(--muted); margin: 0.55em 0 0; line-height: 1.55; }
+    .authors { font-size: 0.95rem; color: var(--muted); margin: 0.6em 0 0; line-height: 1.55; }
     .authors .me { color: var(--text); font-weight: 700; }
     .authors sup { font-size: 0.7em; }
-    .pullquote { font-style: italic; color: var(--text); margin: 0.6em 0 0; padding-left: 0.9em; border-left: 2px solid var(--rule); font-size: 1.02rem; }
-    .res { font-family: var(--sans); font-size: 0.84rem; margin: 0.7em 0 0; color: var(--muted); }
+    .pullquote { font-style: italic; color: var(--text); margin: 0.7em 0 0; padding-left: 0.9em; border-left: 2px solid var(--rule); font-size: 1.05rem; }
+    .res { font-family: var(--sans); font-size: 0.85rem; margin: 0.85em 0 0; color: var(--muted); }
     .res a { color: var(--link); }
     .res .sep { margin: 0 0.5em; opacity: 0.5; }
 
     footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 0.82rem; color: var(--muted); }
 
-    @media (max-width: 560px) {
+    @media (max-width: 600px) {
       body { font-size: 17px; }
       .interests { columns: 1; }
       .intro { gap: 1.3em; }
       .intro img.avatar { width: 96px; height: 96px; }
-      img.pub-fig { float: none; width: 100%; height: 180px; margin: 0 0 0.8em; }
+      .pub { flex-direction: column; gap: 1em; }
+      .pub-media { flex-basis: auto; width: 100%; }
+      .pub-media .zoom { width: 100%; }
+      .pub-media .zoom:hover { transform: none; box-shadow: none; border-color: var(--rule); }
     }
   </style>
 </head>
@@ -170,80 +183,98 @@
 
       <!-- VBVR -->
       <article class="pub">
-        <img class="pub-fig" src="figs/vbvr.jpg" alt="VBVR overview figure" loading="lazy" />
-        <h3 class="pub-title">A Very Big Video Reasoning Suite (VBVR)</h3>
-        <span class="venue">ICML 2026</span>
-        <p class="accolade">🤗 <span class="en">Hugging Face #1 Paper of the Month · Feb 2026</span><span class="cn">Hugging Face 当月第一论文 · 2026 年 2 月</span></p>
-        <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></p>
-        <p class="res">
-          <a href="https://arxiv.org/abs/2602.20159" target="_blank">arXiv</a><span class="sep">·</span>
-          <a href="https://video-reason.com/" target="_blank">Website</a><span class="sep">·</span>
-          <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank">EvalKit</a><span class="sep">·</span>
-          <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank">Data</a><span class="sep">·</span>
-          <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank">Benchmark</a><span class="sep">·</span>
-          <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank">Leaderboard</a><span class="sep">·</span>
-          <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank">Model</a>
-        </p>
+        <div class="pub-media">
+          <video class="zoom" src="figs/vbvr.mp4" poster="figs/vbvr_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="pub-text">
+          <h3 class="pub-title"><a href="https://video-reason.com/" target="_blank">A Very Big Video Reasoning Suite (VBVR)</a></h3>
+          <span class="venue">ICML 2026</span>
+          <p class="accolade">🤗 <span class="en">Hugging Face #1 Paper of the Month · Feb 2026</span><span class="cn">Hugging Face 当月第一论文 · 2026 年 2 月</span></p>
+          <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></p>
+          <p class="res">
+            <a href="https://arxiv.org/abs/2602.20159" target="_blank">arXiv</a><span class="sep">·</span>
+            <a href="https://video-reason.com/" target="_blank">Website</a><span class="sep">·</span>
+            <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank">EvalKit</a><span class="sep">·</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank">Data</a><span class="sep">·</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank">Benchmark</a><span class="sep">·</span>
+            <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank">Leaderboard</a><span class="sep">·</span>
+            <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank">Model</a>
+          </p>
+        </div>
       </article>
 
       <!-- ConservationBench -->
       <article class="pub">
-        <img class="pub-fig" src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" />
-        <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
-        <span class="venue">ICML 2026</span>
-        <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
-        <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></p>
+        <div class="pub-media"><img class="zoom" src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
+          <span class="venue">ICML 2026</span>
+          <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
+          <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></p>
+        </div>
       </article>
 
       <!-- Demystifying -->
       <article class="pub">
-        <img class="pub-fig" src="figs/demystify.jpg" alt="Demystifying Video Reasoning — Chain-of-Steps" loading="lazy" />
-        <h3 class="pub-title">Demystifying Video Reasoning</h3>
-        <span class="venue">ECCV 2026</span>
-        <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
-        <p class="res">
-          <a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a><span class="sep">·</span>
-          <a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank">Homepage</a>
-        </p>
+        <div class="pub-media">
+          <video class="zoom" src="figs/demystify.mp4" poster="figs/demystify_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
+        </div>
+        <div class="pub-text">
+          <h3 class="pub-title"><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank">Demystifying Video Reasoning</a></h3>
+          <span class="venue">ECCV 2026</span>
+          <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
+          <p class="res">
+            <a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a><span class="sep">·</span>
+            <a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank">Homepage</a>
+          </p>
+        </div>
       </article>
 
       <!-- Egocentric Bias / FlipSet -->
       <article class="pub">
-        <img class="pub-fig" src="figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" />
-        <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
-        <span class="venue">CogSci 2026</span>
-        <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
-        <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></p>
+        <div class="pub-media"><img class="zoom" src="figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
+          <span class="venue">CogSci 2026</span>
+          <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
+          <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></p>
+        </div>
       </article>
 
       <!-- Metacognition -->
       <article class="pub">
-        <img class="pub-fig" src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" />
-        <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
-        <span class="venue">CogSci 2026</span>
-        <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+        <div class="pub-media"><img class="zoom" src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
+          <span class="venue">CogSci 2026</span>
+          <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+        </div>
       </article>
 
       <!-- Cognitive Control -->
       <article class="pub">
-        <img class="pub-fig" src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" />
-        <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
-        <span class="venue">MMRAgI @ CVPR 2026</span>
-        <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
-        <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></p>
+        <div class="pub-media"><img class="zoom" src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
+          <span class="venue">MMRAgI @ CVPR 2026</span>
+          <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
+          <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></p>
+        </div>
       </article>
 
       <!-- Perceptual Constancy -->
       <article class="pub">
-        <img class="pub-fig" src="figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" />
-        <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
-        <span class="venue">ES-Reasoning @ ICLR 2026</span>
-        <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
-        <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></p>
+        <div class="pub-media"><img class="zoom" src="figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
+          <span class="venue">ES-Reasoning @ ICLR 2026</span>
+          <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
+          <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></p>
+        </div>
       </article>
 
-      <!-- AGI as Second Being (no figure) -->
-      <article class="pub">
+      <!-- AGI as Second Being (no media) -->
+      <article class="pub pub--noimg">
         <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
         <span class="venue pre"><span class="en">Preprint</span><span class="cn">预印本</span></span>
         <blockquote class="pullquote"><span class="en">"True intelligence exists only when a system can generate new structures, coordinate them into reasons, and sustain its identity over time."</span><span class="cn">「真正的智能,只存在于一个系统能够生成新结构、将其协调为理由、并在时间中维持其同一性之时。」</span></blockquote>
