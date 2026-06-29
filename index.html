@@ -17,6 +17,7 @@
       --link: #8a4b2d;
       --tag-bg: #f0ede6;
       --tag-text: #5a564d;
+      --card: #ffffff;
       --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -28,6 +29,7 @@
       --link: #d6a07a;
       --tag-bg: #24231d;
       --tag-text: #b3afa4;
+      --card: #1a1a14;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -41,58 +43,37 @@
       transition: background 0.3s, color 0.3s;
       -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 760px;
-      margin: auto;
-      padding: 4.5em 1.5em 5em;
-    }
-    .controls {
-      position: fixed;
-      top: 1.1em;
-      right: 1.1em;
-      display: flex;
-      gap: 0.5em;
-      z-index: 10;
-    }
+    .container { max-width: 820px; margin: auto; padding: 4.5em 1.5em 5em; }
+
+    /* language visibility */
+    .cn { display: none; }
+    body.lang-cn .en { display: none; }
+    body.lang-cn .cn { display: initial; }
+
+    .controls { position: fixed; top: 1.1em; right: 1.1em; display: flex; gap: 0.5em; z-index: 10; }
     .controls button {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      color: var(--muted);
-      background: var(--bg);
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      padding: 0.35em 0.85em;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
+      font-family: var(--sans); font-size: 0.8rem; color: var(--muted);
+      background: var(--bg); border: 1px solid var(--rule); border-radius: 999px;
+      padding: 0.35em 0.85em; cursor: pointer; transition: color 0.2s, border-color 0.2s;
     }
     .controls button:hover { color: var(--text); border-color: var(--text); }
 
     .intro { display: flex; align-items: center; gap: 1.8em; flex-wrap: wrap; }
-    .intro img {
-      width: 132px; height: 132px;
-      object-fit: cover; border-radius: 50%;
-      filter: grayscale(8%);
-    }
+    .intro img.avatar { width: 132px; height: 132px; object-fit: cover; border-radius: 50%; filter: grayscale(8%); }
     .intro .who { flex: 1; min-width: 240px; }
-    h1 {
-      font-size: 2.1rem; font-weight: 600;
-      margin: 0 0 0.15em; letter-spacing: -0.01em;
-    }
-    h1 .cn { font-size: 1.15rem; font-weight: 400; color: var(--muted); margin-left: 0.5em; }
+    h1 { font-size: 2.1rem; font-weight: 600; margin: 0 0 0.15em; letter-spacing: -0.01em; }
+    h1 .alt { font-size: 1.15rem; font-weight: 400; color: var(--muted); margin-left: 0.5em; }
     .role { font-family: var(--sans); font-size: 0.92rem; color: var(--muted); margin: 0; }
 
     .lede { margin: 2em 0 0; font-size: 1.18rem; }
     .lede + .lede { margin-top: 1em; }
 
     h2 {
-      font-family: var(--sans);
-      font-size: 0.82rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--muted);
-      margin: 3em 0 1.1em;
-      padding-bottom: 0.6em;
-      border-bottom: 1px solid var(--rule);
+      font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted);
+      margin: 3.2em 0 0.4em; padding-bottom: 0.6em; border-bottom: 1px solid var(--rule);
     }
+    .legend { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin: 0 0 1.6em; }
 
     a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     a:hover { border-bottom-color: var(--link); }
@@ -100,28 +81,36 @@
     .links { font-family: var(--sans); font-size: 0.92rem; margin-top: 1.6em; display: flex; flex-wrap: wrap; gap: 0.4em 1.3em; }
     .links a { color: var(--text); }
 
-    .interests { font-family: var(--sans); font-size: 0.98rem; columns: 2; column-gap: 2.5em; padding: 0; list-style: none; }
-    .interests li { margin: 0 0 0.6em; padding-left: 1em; text-indent: -1em; }
+    .interests { font-family: var(--sans); font-size: 0.98rem; columns: 2; column-gap: 2.5em; padding: 0; list-style: none; margin: 0; }
+    .interests li { margin: 0 0 0.6em; padding-left: 1em; text-indent: -1em; break-inside: avoid; }
     .interests li::before { content: "—"; color: var(--muted); margin-right: 0.5em; }
 
-    .news { list-style: none; padding: 0; margin: 0; }
-    .news li { display: flex; gap: 1.2em; margin-bottom: 0.9em; }
-    .news .date { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); white-space: nowrap; padding-top: 0.18em; min-width: 5.4em; }
-    .news .what { flex: 1; font-size: 1rem; }
-
-    .pubs { list-style: none; padding: 0; margin: 0; counter-reset: pub; }
-    .pub { margin-bottom: 1.7em; padding-left: 2em; position: relative; }
-    .pub::before {
-      counter-increment: pub; content: counter(pub);
-      position: absolute; left: 0; top: 0.15em;
-      font-family: var(--sans); font-size: 0.78rem; color: var(--muted);
+    /* publication cards */
+    .pubs { display: flex; flex-direction: column; gap: 1.6em; }
+    .pub {
+      background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+      overflow: hidden;
     }
-    .pub .title { font-weight: 600; }
-    .pub .authors { color: var(--muted); font-size: 0.96rem; }
-    .pub .authors .me { color: var(--text); font-weight: 500; }
-    .pub .meta { font-family: var(--sans); font-size: 0.85rem; margin-top: 0.25em; display: flex; flex-wrap: wrap; gap: 0.5em; align-items: center; }
-    .venue { background: var(--tag-bg); color: var(--tag-text); border-radius: 4px; padding: 0.12em 0.6em; font-weight: 500; }
+    .pub-fig { margin: 0; background: #fff; border-bottom: 1px solid var(--rule); }
+    .pub-fig img { display: block; width: 100%; max-height: 280px; object-fit: cover; object-position: top center; }
+    .pub--featured .pub-fig img { max-height: 380px; object-fit: contain; padding: 0.6em; }
+    .pub-body { padding: 1.1em 1.3em 1.3em; }
+    .pub-title { font-size: 1.2rem; font-weight: 600; margin: 0 0 0.45em; line-height: 1.3; }
+    .venue {
+      display: inline-block; font-family: var(--sans); font-size: 0.74rem; font-weight: 600;
+      letter-spacing: 0.03em; background: var(--tag-bg); color: var(--tag-text);
+      border-radius: 4px; padding: 0.18em 0.6em; vertical-align: middle;
+    }
     .venue.pre { background: transparent; border: 1px solid var(--rule); }
+    .accolade { font-family: var(--sans); font-size: 0.82rem; color: #b3791f; margin: 0.55em 0 0; }
+    [data-theme="dark"] .accolade { color: #d9a441; }
+    .authors { font-size: 0.95rem; color: var(--muted); margin: 0.6em 0 0; line-height: 1.55; }
+    .authors .me { color: var(--text); font-weight: 700; }
+    .authors sup { font-size: 0.7em; }
+    .pullquote { font-style: italic; color: var(--text); margin: 0.7em 0 0; padding-left: 0.9em; border-left: 2px solid var(--rule); font-size: 1.05rem; }
+    .res { font-family: var(--sans); font-size: 0.85rem; margin: 0.85em 0 0; color: var(--muted); }
+    .res a { color: var(--link); }
+    .res .sep { margin: 0 0.55em; opacity: 0.5; }
 
     footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 0.82rem; color: var(--muted); }
 
@@ -129,212 +118,179 @@
       body { font-size: 17px; }
       .interests { columns: 1; }
       .intro { gap: 1.3em; }
-      .intro img { width: 96px; height: 96px; }
+      .intro img.avatar { width: 96px; height: 96px; }
+      .pub-fig img { max-height: 200px; }
     }
   </style>
 </head>
-<body>
+<body class="lang-en">
   <div class="controls">
     <button onclick="toggleLang()" id="langBtn">中文</button>
     <button onclick="toggleTheme()" id="themeBtn">Dark</button>
   </div>
 
-  <!-- ============ ENGLISH ============ -->
-  <main class="container" id="content-en">
+  <main class="container">
     <section class="intro">
-      <img src="Maijunxian_Wang.jpg" alt="Maijunxian Wang" />
+      <img class="avatar" src="Maijunxian_Wang.jpg" alt="Maijunxian Wang" />
       <div class="who">
-        <h1>Maijunxian (Mark) Wang<span class="cn">王麦俊贤</span></h1>
-        <p class="role">Undergraduate Researcher · Cognitive Science (computational) · UC Berkeley</p>
+        <h1><span class="en">Maijunxian (Mark) Wang<span class="alt">王麦俊贤</span></span><span class="cn">王麦俊贤<span class="alt">Maijunxian (Mark) Wang</span></span></h1>
+        <p class="role"><span class="en">Undergraduate Researcher · Cognitive Science (computational) · UC Berkeley</span><span class="cn">本科研究者 · 认知科学（计算方向）· 加州大学伯克利分校</span></p>
         <div class="links">
           <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google&nbsp;Scholar</a>
           <a href="https://github.com/MJXWANG" target="_blank">GitHub</a>
           <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
-          <a href="Maijunxian_Wang_CV.pdf" target="_blank">CV&nbsp;(PDF)</a>
-          <a href="mailto:mjxwang@berkeley.edu">Email</a>
+          <a href="Maijunxian_Wang_CV.pdf" target="_blank"><span class="en">CV&nbsp;(PDF)</span><span class="cn">简历&nbsp;(PDF)</span></a>
+          <a href="mailto:mjxwang@berkeley.edu"><span class="en">Email</span><span class="cn">邮箱</span></a>
         </div>
       </div>
     </section>
 
     <p class="lede">
-      I study the cognition of frontier AI — how vision-language and video models reason,
-      where they systematically fail, and what those failures reveal about intelligence itself.
-      My work spans multimodal evaluation, machine psychophysics, and embodied &amp; 3D agents.
+      <span class="en">I study the cognition of frontier AI — how vision-language and video models reason,
+        where they systematically fail, and what those failures reveal about intelligence itself.
+        My work spans multimodal evaluation, machine psychophysics, and embodied &amp; 3D agents.</span>
+      <span class="cn">我研究前沿 AI 的「认知」——视觉语言模型与视频模型如何推理、在哪里会系统性地失败，
+        以及这些失败又反过来揭示了关于智能本身的什么。我的工作涵盖多模态评测、机器心理物理学，以及具身与 3D 智能体。</span>
     </p>
     <p class="lede">
-      My goal is to help build AI that is general, trustworthy, and interpretable. I'm part of the
-      <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a> research collective.
+      <span class="en">My goal is to help build AI that is general, trustworthy, and interpretable. I'm part of the
+        <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a> research collective.</span>
+      <span class="cn">我希望帮助构建通用、可信赖、可解释的人工智能。我是
+        <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a> 研究社区的一员。</span>
     </p>
 
-    <h2>News</h2>
-    <ul class="news">
-      <li><span class="date">Jun 2026</span><span class="what"><em>Egocentric Bias in VLMs</em> and <em>Assessing Perceptual Metacognition in VLMs</em> accepted to <strong>CogSci 2026</strong>.</span></li>
-      <li><span class="date">May 2026</span><span class="what"><em>Demystifying Video Reasoning</em> accepted to <strong>ECCV 2026</strong>.</span></li>
-      <li><span class="date">May 2026</span><span class="what"><em>VBVR</em> and <em>ConservationBench</em> accepted to <strong>ICML 2026</strong>.</span></li>
-      <li><span class="date">May 2026</span><span class="what"><em>Increasing Computation Resolves Conflicts in VLMs</em> published at the <strong>MMRAgI Workshop @ CVPR 2026</strong>.</span></li>
-    </ul>
+    <h2><span class="en">Selected Publications</span><span class="cn">代表论文</span></h2>
+    <p class="legend">
+      <span class="en"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author</span>
+      <span class="cn"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者</span>
+    </p>
 
-    <h2>Selected Publications</h2>
-    <ol class="pubs">
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2602.20159" target="_blank">A Very Big Video Reasoning Suite (VBVR)</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">ICML 2026</span><a href="https://arxiv.org/abs/2602.20159" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2603.07109" target="_blank">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</a></span><br />
-        <span class="authors">D. Luo, Y. Li, <span class="me">M. Wang</span>, T. Zhao, B. Wang, et al.</span>
-        <div class="meta"><span class="venue">ICML 2026</span><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2603.16870" target="_blank">Demystifying Video Reasoning</a></span><br />
-        <span class="authors">R. Wang, Z. Cai, F. Pu, J. Xu, W. Yin, <span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">ECCV 2026</span><a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2602.15892" target="_blank">Egocentric Bias in Vision-Language Models (FlipSet)</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, Y. Li, B. Wang, T. Zhao, R. Ji, et al.</span>
-        <div class="meta"><span class="venue">CogSci 2026</span><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title">Assessing Perceptual Metacognition in Vision-Language Models</span><br />
-        <span class="authors">R. Ji, <span class="me">M. Wang</span>, Q. Gao, Y. Li, H. Deng, D. Luo</span>
-        <div class="meta"><span class="venue">CogSci 2026</span></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2505.18969" target="_blank">Increasing Computation Resolves Conflicts in Vision Language Models</a></span><br />
-        <span class="authors">B. Wang, Y. Li, Y. Qiao, <span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">MMRAgI @ CVPR 2026</span><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2502.10273" target="_blank">Probing Perceptual Constancy in Large Vision-Language Models</a></span><br />
-        <span class="authors">H. Sun, B. Wang, S. Yu, Y. Li, …, <span class="me">M. Wang</span>, D. Luo, H. Deng</span>
-        <div class="meta"><span class="venue">ES-Reasoning @ ICLR 2026</span><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2509.02089" target="_blank">AGI as Second Being: The Structural-Generative Ontology of Intelligence</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, R. Ji</span>
-        <div class="meta"><span class="venue pre">Preprint</span><a href="https://arxiv.org/abs/2509.02089" target="_blank">arXiv</a></div>
-      </li>
-    </ol>
+    <div class="pubs">
 
-    <h2>Research Interests</h2>
-    <ul class="interests">
-      <li>Machine cognition &amp; psychophysics of vision-language models</li>
-      <li>Video reasoning &amp; multimodal benchmarks</li>
-      <li>Embodied &amp; 3D agents</li>
-      <li>AI alignment, interpretability &amp; ethics</li>
-    </ul>
-
-    <footer>© 2026 Maijunxian Wang · mjxwang@berkeley.edu</footer>
-  </main>
-
-  <!-- ============ 中文 ============ -->
-  <main class="container" id="content-cn" style="display:none">
-    <section class="intro">
-      <img src="Maijunxian_Wang.jpg" alt="王麦俊贤" />
-      <div class="who">
-        <h1>王麦俊贤<span class="cn">Maijunxian (Mark) Wang</span></h1>
-        <p class="role">本科研究者 · 认知科学（计算方向）· 加州大学伯克利分校</p>
-        <div class="links">
-          <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&hl=en" target="_blank">Google&nbsp;Scholar</a>
-          <a href="https://github.com/MJXWANG" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank">LinkedIn</a>
-          <a href="Maijunxian_Wang_CV.pdf" target="_blank">简历&nbsp;(PDF)</a>
-          <a href="mailto:mjxwang@berkeley.edu">邮箱</a>
+      <!-- VBVR -->
+      <article class="pub pub--featured">
+        <figure class="pub-fig"><img src="figs/vbvr.jpg" alt="VBVR overview figure" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">A Very Big Video Reasoning Suite (VBVR)</h3>
+          <span class="venue">ICML 2026</span>
+          <p class="accolade">🤗 <span class="en">Hugging Face #1 Paper of the Month · Feb 2026</span><span class="cn">Hugging Face 当月第一论文 · 2026 年 2 月</span></p>
+          <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></p>
+          <p class="res">
+            <a href="https://arxiv.org/abs/2602.20159" target="_blank">arXiv</a><span class="sep">·</span>
+            <a href="https://video-reason.com/" target="_blank">Website</a><span class="sep">·</span>
+            <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank">EvalKit</a><span class="sep">·</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank">Data</a><span class="sep">·</span>
+            <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank">Benchmark</a><span class="sep">·</span>
+            <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank">Leaderboard</a><span class="sep">·</span>
+            <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank">Model</a>
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <p class="lede">
-      我研究前沿 AI 的「认知」——视觉语言模型与视频模型如何推理、在哪里会系统性地失败，
-      以及这些失败又反过来揭示了关于智能本身的什么。我的工作涵盖多模态评测、机器心理物理学，
-      以及具身与 3D 智能体。
-    </p>
-    <p class="lede">
-      我希望帮助构建通用、可信赖、可解释的人工智能。我是
-      <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a> 研究社区的一员。
-    </p>
+      <!-- ConservationBench -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
+          <span class="venue">ICML 2026</span>
+          <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
+          <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></p>
+        </div>
+      </article>
 
-    <h2>近况</h2>
-    <ul class="news">
-      <li><span class="date">2026·6</span><span class="what"><em>Egocentric Bias in VLMs</em> 与 <em>Assessing Perceptual Metacognition in VLMs</em> 被 <strong>CogSci 2026</strong> 接收。</span></li>
-      <li><span class="date">2026·5</span><span class="what"><em>Demystifying Video Reasoning</em> 被 <strong>ECCV 2026</strong> 接收。</span></li>
-      <li><span class="date">2026·5</span><span class="what"><em>VBVR</em> 与 <em>ConservationBench</em> 被 <strong>ICML 2026</strong> 接收。</span></li>
-      <li><span class="date">2026·5</span><span class="what"><em>Increasing Computation Resolves Conflicts in VLMs</em> 发表于 <strong>CVPR 2026 MMRAgI Workshop</strong>。</span></li>
-    </ul>
+      <!-- Demystifying -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/demystify.jpg" alt="Demystifying Video Reasoning — Chain-of-Steps" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Demystifying Video Reasoning</h3>
+          <span class="venue">ECCV 2026</span>
+          <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
+          <p class="res">
+            <a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a><span class="sep">·</span>
+            <a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank">Homepage</a>
+          </p>
+        </div>
+      </article>
 
-    <h2>代表论文</h2>
-    <ol class="pubs">
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2602.20159" target="_blank">A Very Big Video Reasoning Suite (VBVR)</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">ICML 2026</span><a href="https://arxiv.org/abs/2602.20159" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2603.07109" target="_blank">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</a></span><br />
-        <span class="authors">D. Luo, Y. Li, <span class="me">M. Wang</span>, T. Zhao, B. Wang, et al.</span>
-        <div class="meta"><span class="venue">ICML 2026</span><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2603.16870" target="_blank">Demystifying Video Reasoning</a></span><br />
-        <span class="authors">R. Wang, Z. Cai, F. Pu, J. Xu, W. Yin, <span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">ECCV 2026</span><a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2602.15892" target="_blank">Egocentric Bias in Vision-Language Models (FlipSet)</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, Y. Li, B. Wang, T. Zhao, R. Ji, et al.</span>
-        <div class="meta"><span class="venue">CogSci 2026</span><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title">Assessing Perceptual Metacognition in Vision-Language Models</span><br />
-        <span class="authors">R. Ji, <span class="me">M. Wang</span>, Q. Gao, Y. Li, H. Deng, D. Luo</span>
-        <div class="meta"><span class="venue">CogSci 2026</span></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2505.18969" target="_blank">Increasing Computation Resolves Conflicts in Vision Language Models</a></span><br />
-        <span class="authors">B. Wang, Y. Li, Y. Qiao, <span class="me">M. Wang</span>, et al.</span>
-        <div class="meta"><span class="venue">MMRAgI @ CVPR 2026</span><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2502.10273" target="_blank">Probing Perceptual Constancy in Large Vision-Language Models</a></span><br />
-        <span class="authors">H. Sun, B. Wang, S. Yu, Y. Li, …, <span class="me">M. Wang</span>, D. Luo, H. Deng</span>
-        <div class="meta"><span class="venue">ES-Reasoning @ ICLR 2026</span><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></div>
-      </li>
-      <li class="pub">
-        <span class="title"><a href="https://arxiv.org/abs/2509.02089" target="_blank">AGI as Second Being: The Structural-Generative Ontology of Intelligence</a></span><br />
-        <span class="authors"><span class="me">M. Wang</span>, R. Ji</span>
-        <div class="meta"><span class="venue pre">预印本</span><a href="https://arxiv.org/abs/2509.02089" target="_blank">arXiv</a></div>
-      </li>
-    </ol>
+      <!-- Egocentric Bias / FlipSet -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
+          <span class="venue">CogSci 2026</span>
+          <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
+          <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></p>
+        </div>
+      </article>
 
-    <h2>研究兴趣</h2>
+      <!-- Metacognition -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
+          <span class="venue">CogSci 2026</span>
+          <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+        </div>
+      </article>
+
+      <!-- Cognitive Control -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
+          <span class="venue">MMRAgI @ CVPR 2026</span>
+          <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
+          <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></p>
+        </div>
+      </article>
+
+      <!-- Perceptual Constancy -->
+      <article class="pub">
+        <figure class="pub-fig"><img src="figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" /></figure>
+        <div class="pub-body">
+          <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
+          <span class="venue">ES-Reasoning @ ICLR 2026</span>
+          <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
+          <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></p>
+        </div>
+      </article>
+
+      <!-- AGI as Second Being (no figure) -->
+      <article class="pub pub--noimg">
+        <div class="pub-body">
+          <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
+          <span class="venue pre"><span class="en">Preprint</span><span class="cn">预印本</span></span>
+          <blockquote class="pullquote"><span class="en">"True intelligence exists only when a system can generate new structures, coordinate them into reasons, and sustain its identity over time."</span><span class="cn">「真正的智能,只存在于一个系统能够生成新结构、将其协调为理由、并在时间中维持其同一性之时。」</span></blockquote>
+          <p class="authors"><span class="me">Maijunxian Wang</span>, Ran Ji</p>
+          <p class="res"><a href="https://arxiv.org/abs/2509.02089" target="_blank">arXiv</a></p>
+        </div>
+      </article>
+
+    </div>
+
+    <h2><span class="en">Research Interests</span><span class="cn">研究兴趣</span></h2>
     <ul class="interests">
-      <li>机器认知与视觉语言模型的心理物理学</li>
-      <li>视频推理与多模态基准评测</li>
-      <li>具身与 3D 智能体</li>
-      <li>AI 对齐、可解释性与伦理</li>
+      <li><span class="en">Machine cognition &amp; psychophysics of vision-language models</span><span class="cn">机器认知与视觉语言模型的心理物理学</span></li>
+      <li><span class="en">Video reasoning &amp; multimodal benchmarks</span><span class="cn">视频推理与多模态基准评测</span></li>
+      <li><span class="en">Embodied &amp; 3D agents</span><span class="cn">具身与 3D 智能体</span></li>
+      <li><span class="en">AI alignment, interpretability &amp; ethics</span><span class="cn">AI 对齐、可解释性与伦理</span></li>
     </ul>
 
-    <footer>© 2026 王麦俊贤 · mjxwang@berkeley.edu</footer>
+    <footer>© 2026 <span class="en">Maijunxian Wang</span><span class="cn">王麦俊贤</span> · mjxwang@berkeley.edu</footer>
   </main>
 
   <script>
     function toggleTheme() {
       const html = document.documentElement;
       const dark = html.getAttribute("data-theme") === "dark";
-      if (dark) html.removeAttribute("data-theme");
-      else html.setAttribute("data-theme", "dark");
+      if (dark) html.removeAttribute("data-theme"); else html.setAttribute("data-theme", "dark");
       document.getElementById("themeBtn").textContent = dark ? "Dark" : "Light";
     }
     function toggleLang() {
-      const en = document.getElementById("content-en");
-      const cn = document.getElementById("content-cn");
-      const showCn = en.style.display !== "none";
-      en.style.display = showCn ? "none" : "block";
-      cn.style.display = showCn ? "block" : "none";
-      document.getElementById("langBtn").textContent = showCn ? "EN" : "中文";
-      document.documentElement.lang = showCn ? "zh" : "en";
+      const cn = document.body.classList.toggle("lang-cn");
+      document.body.classList.toggle("lang-en", !cn);
+      document.getElementById("langBtn").textContent = cn ? "EN" : "中文";
+      document.documentElement.lang = cn ? "zh" : "en";
     }
   </script>
 </body>
