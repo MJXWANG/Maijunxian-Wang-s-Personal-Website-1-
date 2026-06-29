@@ -113,6 +113,8 @@
       border-radius: 4px; padding: 0.18em 0.6em; vertical-align: middle;
     }
     .venue.pre { background: transparent; border: 1px solid var(--rule); }
+    .venue.accepted::before { content: "✓\00a0"; color: #3f8a52; font-weight: 700; }
+    [data-theme="dark"] .venue.accepted::before { color: #6fc488; }
     .accolade { font-family: var(--sans); font-size: 0.82rem; color: #b3791f; margin: 0.55em 0 0; }
     [data-theme="dark"] .accolade { color: #d9a441; }
     .authors { font-size: 0.95rem; color: var(--muted); margin: 0.6em 0 0; line-height: 1.55; }
@@ -175,20 +177,20 @@
 
     <h2><span class="en">Selected Publications</span><span class="cn">代表论文</span></h2>
     <p class="legend">
-      <span class="en"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author</span>
-      <span class="cn"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者</span>
+      <span class="en"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> accepted</span>
+      <span class="cn"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者 &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> 已录用</span>
     </p>
 
     <div class="pubs">
 
-      <!-- VBVR -->
+      <!-- 1. VBVR -->
       <article class="pub">
         <div class="pub-media">
           <video class="zoom" src="figs/vbvr.mp4" poster="figs/vbvr_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
         </div>
         <div class="pub-text">
           <h3 class="pub-title"><a href="https://video-reason.com/" target="_blank">A Very Big Video Reasoning Suite (VBVR)</a></h3>
-          <span class="venue">ICML 2026</span>
+          <span class="venue accepted">ICML 2026</span>
           <p class="accolade">🤗 <span class="en">Hugging Face #1 Paper of the Month · Feb 2026</span><span class="cn">Hugging Face 当月第一论文 · 2026 年 2 月</span></p>
           <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></p>
           <p class="res">
@@ -203,25 +205,14 @@
         </div>
       </article>
 
-      <!-- ConservationBench -->
-      <article class="pub">
-        <div class="pub-media"><img class="zoom" src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" /></div>
-        <div class="pub-text">
-          <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
-          <span class="venue">ICML 2026</span>
-          <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
-          <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></p>
-        </div>
-      </article>
-
-      <!-- Demystifying -->
+      <!-- 2. Demystifying -->
       <article class="pub">
         <div class="pub-media">
           <video class="zoom" src="figs/demystify.mp4" poster="figs/demystify_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
         </div>
         <div class="pub-text">
           <h3 class="pub-title"><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank">Demystifying Video Reasoning</a></h3>
-          <span class="venue">ECCV 2026</span>
+          <span class="venue accepted">ECCV 2026</span>
           <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
           <p class="res">
             <a href="https://arxiv.org/abs/2603.16870" target="_blank">arXiv</a><span class="sep">·</span>
@@ -230,50 +221,61 @@
         </div>
       </article>
 
-      <!-- Egocentric Bias / FlipSet -->
+      <!-- 3. ConservationBench -->
+      <article class="pub">
+        <div class="pub-media"><img class="zoom" src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
+          <span class="venue accepted">ICML 2026</span>
+          <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
+          <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank">arXiv</a></p>
+        </div>
+      </article>
+
+      <!-- 4. Metacognition -->
+      <article class="pub">
+        <div class="pub-media"><img class="zoom" src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
+          <span class="venue accepted">CogSci 2026</span>
+          <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+        </div>
+      </article>
+
+      <!-- 5. Egocentric Bias / FlipSet -->
       <article class="pub">
         <div class="pub-media"><img class="zoom" src="figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" /></div>
         <div class="pub-text">
           <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
-          <span class="venue">CogSci 2026</span>
+          <span class="venue accepted">CogSci 2026</span>
           <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
           <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank">arXiv</a></p>
         </div>
       </article>
 
-      <!-- Metacognition -->
-      <article class="pub">
-        <div class="pub-media"><img class="zoom" src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" /></div>
-        <div class="pub-text">
-          <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
-          <span class="venue">CogSci 2026</span>
-          <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
-        </div>
-      </article>
-
-      <!-- Cognitive Control -->
-      <article class="pub">
-        <div class="pub-media"><img class="zoom" src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" /></div>
-        <div class="pub-text">
-          <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
-          <span class="venue">MMRAgI @ CVPR 2026</span>
-          <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
-          <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></p>
-        </div>
-      </article>
-
-      <!-- Perceptual Constancy -->
+      <!-- 6. Perceptual Constancy -->
       <article class="pub">
         <div class="pub-media"><img class="zoom" src="figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" /></div>
         <div class="pub-text">
           <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
-          <span class="venue">ES-Reasoning @ ICLR 2026</span>
+          <span class="venue accepted">ES-Reasoning @ ICLR 2026</span>
           <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
           <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank">arXiv</a></p>
         </div>
       </article>
 
-      <!-- AGI as Second Being (no media) -->
+      <!-- 7. Cognitive Control -->
+      <article class="pub">
+        <div class="pub-media"><img class="zoom" src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" /></div>
+        <div class="pub-text">
+          <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
+          <span class="venue accepted">MMRAgI @ CVPR 2026</span>
+          <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
+          <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank">arXiv</a></p>
+        </div>
+      </article>
+
+      <!-- 8. AGI as Second Being (no media) -->
       <article class="pub pub--noimg">
         <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
         <span class="venue pre"><span class="en">Preprint</span><span class="cn">预印本</span></span>
