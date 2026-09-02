@@ -33,6 +33,8 @@ and no video is loaded automatically when reduced motion is requested.
 
 ## Activity log
 
+- 2026-09-02: Made light mode the default for first-time visitors while preserving
+  a returning visitor's explicit theme selection.
 - 2026-09-02: Split English and Chinese into crawlable routes with canonical,
   hreflang, Open Graph, and Twitter metadata; added persistent theme/language
   preferences, keyboard-visible focus states, an accessible image lightbox, safe

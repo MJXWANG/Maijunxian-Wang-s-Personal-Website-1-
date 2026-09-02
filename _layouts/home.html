@@ -58,7 +58,7 @@
     (function () {
       try {
         var savedTheme = localStorage.getItem("siteTheme");
-        var theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        var theme = savedTheme === "dark" ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", theme);
         var savedLanguage = localStorage.getItem("siteLanguage");
         if (savedLanguage && savedLanguage !== "{{ page_language }}") {
