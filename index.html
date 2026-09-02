@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maijunxian Wang</title>
-  <meta name="description" content="Maijunxian Wang — undergraduate researcher in Cognitive Science at UC Berkeley, studying the cognition of frontier vision-language and video models." />
+  <meta name="description" content="Maijunxian Wang — undergraduate researcher in Cognitive Science at UC Berkeley, studying native visual reasoning, vision-language models, and video models." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -175,10 +175,12 @@
       </p>
       <p class="lede">
         <span class="en">I'm also interested in Physical AI, world models, and making AI more trustworthy and interpretable.
-          I'm part of <a href="https://video-reason.com/" target="_blank">VBVR</a> and
+          I'm part of <a href="https://video-reason.com/?v=pro" target="_blank">VBVR-Pro</a>,
+          <a href="https://video-reason.com/?v=vbvr" target="_blank">VBVR</a>, and
           <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a>.</span>
         <span class="cn">我也关注 Physical AI、世界模型,以及让 AI 更可信、更可解释。我是
-          <a href="https://video-reason.com/" target="_blank">VBVR</a> 与
+          <a href="https://video-reason.com/?v=pro" target="_blank">VBVR-Pro</a>、
+          <a href="https://video-reason.com/?v=vbvr" target="_blank">VBVR</a> 与
           <a href="https://growing-ai-like-a-child.github.io/" target="_blank">Grow&nbsp;AI</a> 的一员。</span>
       </p>
 
@@ -190,7 +192,29 @@
 
       <div class="pubs">
 
-        <!-- 1. VBVR -->
+        <!-- 1. VBVR-Pro -->
+        <article class="pub">
+          <div class="pub-media">
+            <video class="zoom" src="figs/vbvr_pro.mp4" poster="figs/vbvr_pro_poster.jpg" autoplay loop muted playsinline preload="metadata" aria-label="VBVR-Pro native visual reasoning examples"></video>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://video-reason.com/?v=pro" target="_blank">VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</a></h3>
+            <span class="venue pre"><span class="en">Preprint</span><span class="cn">预印本</span></span>
+            <p class="authors">Junxiang Xu, Ruisi Wang, Fanyi Pu, <span class="me">Maijunxian Wang</span>, Ran Ji, Tongxi Zhou, Chenyang Gu, Jing Zuo, Hongcan Xiao, Yimeng Geng, Wanqi Yin, Wei Chen<span class="rest">, Oscar Qian, Zhengan Yan, Ziqi Huang, Haiwen Diao, Liang Pan, Bo Li, Xiangyu Fan, Dezhi Luo, Fengyuan Yu, Zehong Zhao, Qingying Gao, Tinghui Zhu, Yilan Zhang, Jingqi Tong, Pinyuan Feng, Zhengze Jiang, Letian Wang, Ziyu Guo, Renrui Zhang, Jieneng Chen, Sonia Joseph, Constantin Venhoff, Saman Motamed, Mengyue Yang, Chandra Sripada, Alan Yuille, Philip Torr, Lvmin Zhang, Vikash Kumar, Daniel Khashabi, Nikolaus Kriegeskorte, Raphaël Millière, Vincent C. Müller, Anyi Rao, Quan Wang, Ziwei Liu, Dahua Lin, Lei Yang, Hokin Deng, Zhongang Cai</span> <button type="button" class="morebtn" onclick="this.closest('.authors').classList.toggle('shown')"><span class="lbl-more"><span class="en">…&nbsp;show all (52)</span><span class="cn">…&nbsp;展开全部 (52)</span></span><span class="lbl-less"><span class="en">show less</span><span class="cn">收起</span></span></button></p>
+            <p class="res">
+              <a href="https://arxiv.org/abs/2608.26105" target="_blank">Paper</a><span class="sep">·</span>
+              <a href="https://video-reason.com/?v=pro" target="_blank">Website</a><span class="sep">·</span>
+              <a href="https://github.com/Video-Reason/VBVR-Pro" target="_blank">Code</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/data/" target="_blank">Data</a><span class="sep">·</span>
+              <a href="https://huggingface.co/collections/Video-Reason/vbvr-pro-a-scalable-and-verifiable-suite-for-native-visual" target="_blank">Models</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/bench/" target="_blank">Bench</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/leaderboard/" target="_blank">Leaderboard</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/scorers/" target="_blank">Scorers</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- 2. VBVR -->
         <article class="pub">
           <div class="pub-media">
             <video class="zoom" src="figs/vbvr.mp4" poster="figs/vbvr_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
@@ -212,7 +236,7 @@
           </div>
         </article>
 
-        <!-- 2. Demystifying -->
+        <!-- 3. Demystifying -->
         <article class="pub">
           <div class="pub-media">
             <video class="zoom" src="figs/demystify.mp4" poster="figs/demystify_poster.jpg" autoplay loop muted playsinline preload="metadata"></video>
@@ -229,7 +253,7 @@
           </div>
         </article>
 
-        <!-- 3. ConservationBench -->
+        <!-- 4. ConservationBench -->
         <article class="pub">
           <div class="pub-media"><img class="zoom" src="figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" /></div>
           <div class="pub-text">
@@ -240,7 +264,7 @@
           </div>
         </article>
 
-        <!-- 4. Egocentric Bias / FlipSet -->
+        <!-- 5. Egocentric Bias / FlipSet -->
         <article class="pub">
           <div class="pub-media"><img class="zoom" src="figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" /></div>
           <div class="pub-text">
@@ -252,7 +276,7 @@
           </div>
         </article>
 
-        <!-- 5. Metacognition -->
+        <!-- 6. Metacognition -->
         <article class="pub">
           <div class="pub-media"><img class="zoom" src="figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" /></div>
           <div class="pub-text">
@@ -262,7 +286,7 @@
           </div>
         </article>
 
-        <!-- 6. Cognitive Control -->
+        <!-- 7. Cognitive Control -->
         <article class="pub">
           <div class="pub-media"><img class="zoom" src="figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" /></div>
           <div class="pub-text">
@@ -273,7 +297,7 @@
           </div>
         </article>
 
-        <!-- 7. Perceptual Constancy -->
+        <!-- 8. Perceptual Constancy -->
         <article class="pub">
           <div class="pub-media"><img class="zoom" src="figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" /></div>
           <div class="pub-text">
@@ -284,7 +308,7 @@
           </div>
         </article>
 
-        <!-- 8. AGI as Second Being (no media) -->
+        <!-- 9. AGI as Second Being (no media) -->
         <article class="pub">
           <div class="pub-text">
             <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
