@@ -1,0 +1,255 @@
+{% if page.lang == "zh" %}
+  {% assign page_language = "zh" %}
+  {% assign asset_prefix = ".." %}
+  {% assign canonical_url = "https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/zh/" %}
+  {% assign alternate_url = "../" %}
+{% else %}
+  {% assign page_language = "en" %}
+  {% assign asset_prefix = "." %}
+  {% assign canonical_url = "https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/" %}
+  {% assign alternate_url = "zh/" %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ page_language }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% if page.lang == "zh" %}
+  <title>王麦俊贤｜视频推理与视觉语言模型研究</title>
+  <meta name="description" content="王麦俊贤，加州大学伯克利分校认知科学本科研究者，研究视频推理、视觉语言模型、Physical AI 与 AI 评测。" />
+  {% else %}
+  <title>Maijunxian Wang | Video Reasoning Researcher</title>
+  <meta name="description" content="Maijunxian Wang is a UC Berkeley researcher studying video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <link rel="alternate" hreflang="en" href="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/" />
+  <link rel="alternate" hreflang="zh" href="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/" />
+  <meta name="theme-color" content="#fbfbf9" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="{{ canonical_url }}" />
+  {% if page.lang == "zh" %}
+  <meta property="og:title" content="王麦俊贤｜视频推理与视觉语言模型研究" />
+  <meta property="og:description" content="研究视频推理、视觉语言模型、Physical AI 与可信 AI 评测。" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image:alt" content="VBVR-Pro 原生视觉推理示例" />
+  <meta name="twitter:title" content="王麦俊贤｜视频推理与视觉语言模型研究" />
+  <meta name="twitter:description" content="研究视频推理、视觉语言模型、Physical AI 与可信 AI 评测。" />
+  {% else %}
+  <meta property="og:title" content="Maijunxian Wang | Video Reasoning Researcher" />
+  <meta property="og:description" content="Research on video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:image:alt" content="VBVR-Pro native visual reasoning examples" />
+  <meta name="twitter:title" content="Maijunxian Wang | Video Reasoning Researcher" />
+  <meta name="twitter:description" content="Research on video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  {% endif %}
+  <meta property="og:image" content="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/figs/vbvr_pro_poster.jpg" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="360" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/figs/vbvr_pro_poster.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ asset_prefix }}/assets/site.css" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("siteTheme");
+        var theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        var savedLanguage = localStorage.getItem("siteLanguage");
+        if (savedLanguage && savedLanguage !== "{{ page_language }}") {
+          window.location.replace("{{ alternate_url }}");
+        }
+      } catch (error) { /* Preferences are optional. */ }
+    }());
+  </script>
+  <script src="{{ asset_prefix }}/assets/site.js" defer></script>
+</head>
+<body data-lang="{{ page_language }}">
+  <a class="skip-link" href="#main-content">{% if page.lang == "zh" %}跳到主要内容{% else %}Skip to main content{% endif %}</a>
+
+  <div class="controls" aria-label="{% if page.lang == "zh" %}页面设置{% else %}Page settings{% endif %}">
+    <a class="control" id="languageLink" href="{{ alternate_url }}" hreflang="{% if page.lang == "zh" %}en{% else %}zh{% endif %}" lang="{% if page.lang == "zh" %}en{% else %}zh{% endif %}" aria-label="{% if page.lang == "zh" %}Switch to English{% else %}切换为中文{% endif %}">{% if page.lang == "zh" %}EN{% else %}中文{% endif %}</a>
+    <button class="control" id="themeButton" type="button" data-dark-label="{% if page.lang == "zh" %}深色{% else %}Dark{% endif %}" data-light-label="{% if page.lang == "zh" %}浅色{% else %}Light{% endif %}" aria-pressed="false">{% if page.lang == "zh" %}深色{% else %}Dark{% endif %}</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <img class="avatar" src="{{ asset_prefix }}/Maijunxian_Wang.jpg" alt="{% if page.lang == "zh" %}王麦俊贤{% else %}Maijunxian Wang{% endif %}" width="1279" height="1791" />
+      {% if page.lang == "zh" %}
+      <h1>王麦俊贤<span class="alt">Maijunxian Wang</span></h1>
+      <p class="role">本科研究者<br />认知科学（计算方向）<br />加州大学伯克利分校</p>
+      {% else %}
+      <h1>Maijunxian Wang<span class="alt">王麦俊贤</span></h1>
+      <p class="role">Undergraduate Researcher<br />Cognitive Science (computational)<br />UC Berkeley</p>
+      {% endif %}
+      <nav class="links" aria-label="{% if page.lang == "zh" %}个人链接{% else %}Profile links{% endif %}">
+        <a href="https://scholar.google.com/citations?user=6rVn738AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0L0 4.7l8 4.7 6.5-3.8V11H16V4.7L8 0zM3 8.9V11c0 1.66 2.24 3 5 3s5-1.34 5-3V8.9l-5 2.95L3 8.9z"/></svg>Google&nbsp;Scholar</a>
+        <a href="https://github.com/MJXWANG" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        <a href="https://www.linkedin.com/in/maijunxian-wang-910665354" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>LinkedIn</a>
+        <a href="{{ asset_prefix }}/Maijunxian_Wang_CV.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M9 0H3.5A1.5 1.5 0 002 1.5v13A1.5 1.5 0 003.5 16h9a1.5 1.5 0 001.5-1.5V5L9 0zm0 1.6L12.4 5H9V1.6zM4.5 8h7v1.1h-7V8zm0 2.6h7v1.1h-7v-1.1zM4.5 5.4h2.6v1.1H4.5V5.4z"/></svg>{% if page.lang == "zh" %}简历{% else %}Resume{% endif %}</a>
+        <a href="mailto:mjxwang@berkeley.edu" id="emailLink" data-email="mjxwang@berkeley.edu" data-copied-label="{% if page.lang == "zh" %}已复制{% else %}Copied{% endif %}" aria-label="{% if page.lang == "zh" %}复制邮箱地址 mjxwang@berkeley.edu{% else %}Copy mjxwang@berkeley.edu to clipboard{% endif %}" title="{% if page.lang == "zh" %}复制邮箱地址{% else %}Copy email address{% endif %}"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M1.5 3h13A1.5 1.5 0 0116 4.5v7A1.5 1.5 0 0114.5 13h-13A1.5 1.5 0 010 11.5v-7A1.5 1.5 0 011.5 3zm.4 1L8 8.3 14.1 4H1.9zM15 5.1l-7 4.9L1 5.1v6.4a.5.5 0 00.5.5h13a.5.5 0 00.5-.5V5.1z"/></svg><span>mjxwang@berkeley.edu</span><span class="copy-feedback" id="emailFeedback" role="status" aria-live="polite"></span></a>
+      </nav>
+    </aside>
+
+    <main class="content" id="main-content" tabindex="-1">
+      {% if page.lang == "zh" %}
+      <p class="lede">我研究视频推理与视觉语言模型的评测，通过构建基准、开展大规模实验，衡量这些模型如何理解和推理视觉世界，以及它们在哪里失效。</p>
+      <p class="lede">我也关注 Physical AI、世界模型，以及如何让 AI 更可信、更可解释。我是 <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro</a>、<a href="https://video-reason.com/?v=vbvr" target="_blank" rel="noopener noreferrer">VBVR</a> 与 <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow&nbsp;AI</a> 的一员。</p>
+      <h2>代表论文</h2>
+      <p class="legend"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者 &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> 已录用</p>
+      {% else %}
+      <p class="lede">I work on video reasoning and the evaluation of vision-language models. I build benchmarks and run large-scale experiments to measure how these models reason about the visual world—and where they fail.</p>
+      <p class="lede">I'm also interested in Physical AI, world models, and making AI more trustworthy and interpretable. I'm part of <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro</a>, <a href="https://video-reason.com/?v=vbvr" target="_blank" rel="noopener noreferrer">VBVR</a>, and <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow&nbsp;AI</a>.</p>
+      <h2>Selected Publications</h2>
+      <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> accepted</p>
+      {% endif %}
+
+      <div class="pubs">
+        <article class="pub featured">
+          <div class="pub-media">
+            <a class="media-link" href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 VBVR-Pro 项目网站{% else %}Open the VBVR-Pro project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr_pro.mp4" data-priority="true" poster="{{ asset_prefix }}/figs/vbvr_pro_poster.jpg" loop muted playsinline preload="none" width="640" height="360" aria-hidden="true"></video>
+            </a>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</a></h3>
+            <span class="venue pre">{% if page.lang == "zh" %}预印本{% else %}Preprint{% endif %}</span>
+            <p class="authors">Junxiang Xu<sup>*</sup>, Ruisi Wang<sup>*</sup>, Fanyi Pu<sup>*</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Ran Ji<sup>*</sup>, Tongxi Zhou<sup>*</sup>, Chenyang Gu, Jing Zuo, Hongcan Xiao, Yimeng Geng, Wanqi Yin, Wei Chen<span class="rest" id="vbvr-pro-authors-rest" hidden>, Oscar Qian, Zhengan Yan, Ziqi Huang, Haiwen Diao, Liang Pan, Bo Li, Xiangyu Fan, Dezhi Luo, Fengyuan Yu, Zehong Zhao, Qingying Gao, Tinghui Zhu, Yilan Zhang, Jingqi Tong, Pinyuan Feng, Zhengze Jiang, Letian Wang, Ziyu Guo, Renrui Zhang, Jieneng Chen, Sonia Joseph, Constantin Venhoff, Saman Motamed, Mengyue Yang, Chandra Sripada, Alan Yuille, Philip Torr, Lvmin Zhang, Vikash Kumar, Daniel Khashabi, Nikolaus Kriegeskorte, Raphaël Millière, Vincent C. Müller, Anyi Rao, Quan Wang, Ziwei Liu, Dahua Lin, Lei Yang, Hokin Deng<sup>✉</sup>, Zhongang Cai<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-pro-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}</button></p>
+            <p class="res">
+              <a href="https://arxiv.org/abs/2608.26105" target="_blank" rel="noopener noreferrer">Paper</a><span class="sep">·</span>
+              <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
+              <a href="https://github.com/Video-Reason/VBVR-Pro" target="_blank" rel="noopener noreferrer">Code</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/data/" target="_blank" rel="noopener noreferrer">Data</a><span class="sep">·</span>
+              <a href="https://huggingface.co/collections/Video-Reason/vbvr-pro-a-scalable-and-verifiable-suite-for-native-visual" target="_blank" rel="noopener noreferrer">Models</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/bench/" target="_blank" rel="noopener noreferrer">Bench</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/leaderboard/" target="_blank" rel="noopener noreferrer">Leaderboard</a><span class="sep">·</span>
+              <a href="https://video-reason.com/pro/scorers/" target="_blank" rel="noopener noreferrer">Scorers</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="pub featured">
+          <div class="pub-media">
+            <a class="media-link" href="https://video-reason.com/" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 VBVR 项目网站{% else %}Open the VBVR project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr.mp4" poster="{{ asset_prefix }}/figs/vbvr_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
+            </a>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">A Very Big Video Reasoning Suite (VBVR)</a></h3>
+            <span class="venue accepted">ICML 2026</span>
+            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第一论文 · 2026 年 2 月{% else %}Hugging Face #1 Paper of the Month · Feb 2026{% endif %}</p>
+            <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma<span class="rest" id="vbvr-authors-rest" hidden>, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}</button></p>
+            <p class="res">
+              <a href="https://arxiv.org/abs/2602.20159" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span>
+              <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
+              <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank" rel="noopener noreferrer">EvalKit</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank" rel="noopener noreferrer">Data</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank" rel="noopener noreferrer">Benchmark</a><span class="sep">·</span>
+              <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a><span class="sep">·</span>
+              <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank" rel="noopener noreferrer">Model</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media">
+            <a class="media-link" href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 Demystifying Video Reasoning 项目网站{% else %}Open the Demystifying Video Reasoning project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/demystify.mp4" poster="{{ asset_prefix }}/figs/demystify_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
+            </a>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Demystifying Video Reasoning</a></h3>
+            <span class="venue accepted">ECCV 2026</span>
+            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第二论文 · 2026 年 3 月{% else %}Hugging Face #2 Paper of the Month · March 2026{% endif %}</p>
+            <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
+            <p class="res"><a href="https://arxiv.org/abs/2603.16870" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Homepage</a></p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 ConservationBench 图片{% else %}Enlarge the ConservationBench image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" width="1200" height="402" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
+            <span class="venue accepted">ICML 2026</span>
+            <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
+            <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 FlipSet 图片{% else %}Enlarge the FlipSet image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" width="1500" height="497" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
+            <span class="venue accepted">CogSci 2026</span>
+            <p class="accolade">🏆 {% if page.lang == "zh" %}CogSci 2026 Sayan Gul 奖<br />（最佳本科生论文）{% else %}Sayan Gul Award · CogSci 2026<br />(Best Undergraduate Student Paper){% endif %}</p>
+            <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
+            <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大感知元认知图片{% else %}Enlarge the perceptual metacognition image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" width="1200" height="515" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
+            <span class="venue accepted">CogSci 2026</span>
+            <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大认知控制图片{% else %}Enlarge the cognitive control image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" width="1200" height="675" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
+            <span class="venue accepted">MMRAgI @ CVPR 2026</span>
+            <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
+            <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub compact">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大感知恒常性图片{% else %}Enlarge the perceptual constancy image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" width="1200" height="686" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
+            <span class="venue accepted">ES-Reasoning @ ICLR 2026</span>
+            <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
+            <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub compact no-media">
+          <div class="pub-text">
+            <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
+            <span class="venue pre">{% if page.lang == "zh" %}预印本{% else %}Preprint{% endif %}</span>
+            <blockquote class="pullquote">{% if page.lang == "zh" %}「真正的智能，只存在于一个系统能够生成新结构、将其协调为理由，并在时间中维持其同一性之时。」{% else %}“True intelligence exists only when a system can generate new structures, coordinate them into reasons, and sustain its identity over time.”{% endif %}</blockquote>
+            <p class="authors"><span class="me">Maijunxian Wang</span>, Ran Ji</p>
+            <p class="res"><a href="https://arxiv.org/abs/2509.02089" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+      </div>
+
+      <h2>{% if page.lang == "zh" %}研究兴趣{% else %}Research Interests{% endif %}</h2>
+      <div class="tags">
+        <span class="tag">{% if page.lang == "zh" %}视频推理{% else %}Video reasoning{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}视觉语言模型{% else %}Vision-language models{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}基准与评测{% else %}Benchmarks &amp; evaluation{% endif %}</span>
+        <span class="tag">Physical AI</span>
+        <span class="tag">{% if page.lang == "zh" %}世界模型{% else %}World models{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}可解释性{% else %}Interpretability{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}AI 安全{% else %}AI safety{% endif %}</span>
+      </div>
+
+      <footer>© 2026 {% if page.lang == "zh" %}王麦俊贤{% else %}Maijunxian Wang{% endif %} · mjxwang@berkeley.edu</footer>
+    </main>
+  </div>
+
+  <div id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="{% if page.lang == "zh" %}图片预览{% else %}Image preview{% endif %}">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="{% if page.lang == "zh" %}关闭图片预览{% else %}Close image preview{% endif %}">×</button>
+    <img src="" alt="" />
+  </div>
+</body>
+</html>
