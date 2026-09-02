@@ -26,6 +26,8 @@ spans. Update both labels whenever localized copy changes.
 
 ## Activity log
 
+- 2026-09-02: Replaced the generic sidebar Email/邮箱 label with the visible
+  `mjxwang@berkeley.edu` address while retaining the `mailto:` link.
 - 2026-09-02: Added VBVR-Pro as the leading publication, using the same public
   project video and publication metadata as Hokin Deng's homepage, with the
   complete 52-author list and official Paper, Website, Code, Data, Models,
