@@ -60,10 +60,7 @@
         var savedTheme = localStorage.getItem("siteTheme");
         var theme = savedTheme === "dark" ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", theme);
-        var savedLanguage = localStorage.getItem("siteLanguage");
-        if (savedLanguage && savedLanguage !== "{{ page_language }}") {
-          window.location.replace("{{ alternate_url }}");
-        }
+        // Language follows the URL: the main homepage always opens in English.
       } catch (error) { /* Preferences are optional. */ }
     }());
   </script>

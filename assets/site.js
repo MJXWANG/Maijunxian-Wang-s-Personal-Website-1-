@@ -15,11 +15,6 @@ themeButton.addEventListener("click", function () {
 });
 updateThemeButton();
 
-const languageLink = document.getElementById("languageLink");
-languageLink.addEventListener("click", function () {
-  try { localStorage.setItem("siteLanguage", languageLink.hreflang); } catch (error) { /* Storage is optional. */ }
-});
-
 const emailLink = document.getElementById("emailLink");
 const emailFeedback = document.getElementById("emailFeedback");
 let emailFeedbackTimer;

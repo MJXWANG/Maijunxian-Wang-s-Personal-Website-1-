@@ -14,7 +14,7 @@ a shared Jekyll layout.
 | `zh/index.html` | Chinese route |
 | `_layouts/home.html` | Shared page structure and publication content |
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
-| `assets/site.js` | Theme/language preferences, email copy, lazy video loading, author expansion, and image lightbox |
+| `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
 | `Maijunxian_Wang_CV.pdf` | Existing downloadable CV; retained pending approval of the next CV revision |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
@@ -28,6 +28,10 @@ a shared Jekyll layout.
 `index.html` and `zh/index.html` supply language-specific front matter to the shared
 `_layouts/home.html` layout. GitHub Pages/Jekyll renders `/` in English and `/zh/`
 in Chinese. Update both branches of localized copy in the layout when wording changes.
+The main URL always opens in English, regardless of browser locale or a previously
+saved language preference. Chinese is available through the explicit `/zh/` route
+and the language switch. Language links work without JavaScript; theme preference
+is still remembered.
 
 Omni-Reason remains a separate, text-only ongoing project. Publications are grouped
 into Conference Papers, Preprints, and Workshop Papers. All publication cards use
@@ -54,6 +58,13 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-12: Prepared an English-default refinement locally at Mark's request.
+  Removed saved-language redirects and persistence so visiting the main URL never
+  switches to Chinese automatically. Explicit Chinese URLs and manual switching
+  remain supported; theme persistence is unchanged. Verified with a Chinese
+  browser locale and missing/Chinese/English/invalid saved preferences, manual
+  switching in both directions, and JavaScript disabled. Mark explicitly
+  authorized publication of this refinement on 2026-10-12.
 - 2026-10-12: At Mark's request, retained the formal Sayan Gul Award name and
   restored its explanatory descriptor: "Best Undergraduate Student Paper" in
   English and "最佳本科生论文" in Chinese. Dezhi Luo's July 2026 update at
