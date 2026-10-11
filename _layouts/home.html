@@ -15,11 +15,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% if page.lang == "zh" %}
-  <title>王麦俊贤｜视频推理与视觉语言模型研究</title>
-  <meta name="description" content="王麦俊贤，加州大学伯克利分校认知科学本科研究者，研究视频推理、视觉语言模型、Physical AI 与 AI 评测。" />
+  <title>王麦俊贤｜视觉推理与视频模型研究</title>
+  <meta name="description" content="王麦俊贤，加州大学伯克利分校认知科学本科研究者，研究视觉推理、世界模型、认知科学驱动的任务设计与视频模型后训练。" />
   {% else %}
-  <title>Maijunxian Wang | Video Reasoning Researcher</title>
-  <meta name="description" content="Maijunxian Wang is a UC Berkeley researcher studying video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  <title>Maijunxian Wang | Visual Reasoning &amp; Video Models</title>
+  <meta name="description" content="Maijunxian Wang is a UC Berkeley undergraduate researcher studying visual reasoning, world models, cognitively grounded task design, and video-model post-training." />
   {% endif %}
   <link rel="canonical" href="{{ canonical_url }}" />
   <link rel="alternate" hreflang="en" href="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/" />
@@ -29,21 +29,21 @@
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="{{ canonical_url }}" />
   {% if page.lang == "zh" %}
-  <meta property="og:title" content="王麦俊贤｜视频推理与视觉语言模型研究" />
-  <meta property="og:description" content="研究视频推理、视觉语言模型、Physical AI 与可信 AI 评测。" />
+  <meta property="og:title" content="王麦俊贤｜视觉推理与视频模型研究" />
+  <meta property="og:description" content="从认知科学驱动的任务设计与模型分析，到大规模数据构造与视频模型后训练。" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image:alt" content="VBVR-Pro 原生视觉推理示例" />
-  <meta name="twitter:title" content="王麦俊贤｜视频推理与视觉语言模型研究" />
-  <meta name="twitter:description" content="研究视频推理、视觉语言模型、Physical AI 与可信 AI 评测。" />
+  <meta name="twitter:title" content="王麦俊贤｜视觉推理与视频模型研究" />
+  <meta name="twitter:description" content="从认知科学驱动的任务设计与模型分析，到大规模数据构造与视频模型后训练。" />
   {% else %}
-  <meta property="og:title" content="Maijunxian Wang | Video Reasoning Researcher" />
-  <meta property="og:description" content="Research on video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  <meta property="og:title" content="Maijunxian Wang | Visual Reasoning &amp; Video Models" />
+  <meta property="og:description" content="Connecting cognitively grounded task design and model analysis with scalable data construction and video-model post-training." />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:image:alt" content="VBVR-Pro native visual reasoning examples" />
-  <meta name="twitter:title" content="Maijunxian Wang | Video Reasoning Researcher" />
-  <meta name="twitter:description" content="Research on video reasoning, vision-language models, Physical AI, and trustworthy AI evaluation." />
+  <meta name="twitter:title" content="Maijunxian Wang | Visual Reasoning &amp; Video Models" />
+  <meta name="twitter:description" content="Connecting cognitively grounded task design and model analysis with scalable data construction and video-model post-training." />
   {% endif %}
   <meta property="og:image" content="https://mjxwang.github.io/Maijunxian-Wang-s-Personal-Website-1-/figs/vbvr_pro_poster.jpg" />
   <meta property="og:image:width" content="640" />
@@ -98,13 +98,28 @@
 
     <main class="content" id="main-content" tabindex="-1">
       {% if page.lang == "zh" %}
-      <p class="lede">我研究视频推理与视觉语言模型的评测，通过构建基准、开展大规模实验，衡量这些模型如何理解和推理视觉世界，以及它们在哪里失效。</p>
-      <p class="lede">我也关注 Physical AI、世界模型，以及如何让 AI 更可信、更可解释。我是 <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro</a>、<a href="https://video-reason.com/?v=vbvr" target="_blank" rel="noopener noreferrer">VBVR</a> 与 <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow&nbsp;AI</a> 的一员。</p>
+      <p class="lede">我研究视觉推理：模型如何直接在视觉与视频中推断、变换和预测世界状态，以及视觉如何成为与语言并行的推理媒介。我的工作将认知科学驱动的任务设计与模型分析，连接到大规模数据构造和视频生成模型的后训练。</p>
+      <p class="lede">目前，我在 <a href="https://github.com/hipo-dev" target="_blank" rel="noopener noreferrer">Hippocampal</a> 研究团队主导 Omni-Reason 项目，也参与 <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Video-Reason</a> 社区的 VBVR 与 VBVR-Pro 研究。此前，我在 <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow AI Like a Child</a> 开展视觉语言模型的认知能力研究。</p>
+      {% else %}
+      <p class="lede">I study visual reasoning: how models can infer, transform, and predict world states directly through images and video, and how vision can serve as a reasoning medium alongside language. My work connects cognitively grounded task design and model analysis with scalable data construction and video-generation model post-training.</p>
+      <p class="lede">I currently lead Omni-Reason within the <a href="https://github.com/hipo-dev" target="_blank" rel="noopener noreferrer">Hippocampal</a> research team. I also contribute to VBVR and VBVR-Pro in the <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Video-Reason</a> community. Previously, I studied cognitive abilities in vision-language models with <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow AI Like a Child</a>.</p>
+      {% endif %}
+
+      <section aria-labelledby="ongoing-heading">
+        <h2 id="ongoing-heading">{% if page.lang == "zh" %}在研项目{% else %}Ongoing Research{% endif %}</h2>
+        <article class="pub compact no-media" id="omni-reason">
+          <div class="pub-text">
+            <h3 class="pub-title">Omni-Reason</h3>
+            <span class="venue pre">{% if page.lang == "zh" %}在研 · 项目负责人{% else %}In progress · Project lead{% endif %}</span>
+            <p class="pub-summary">{% if page.lang == "zh" %}探索视频生成模型如何通过视频到视频的生成执行视觉推理。我主导模型后训练、数据配比与实验设计，并协调团队开展自动化数据构造与质量审核。{% else %}Exploring visual reasoning through video-to-video generation. I lead model post-training, data-mixture and experiment design, and coordinate the team's automated data construction and quality review.{% endif %}</p>
+          </div>
+        </article>
+      </section>
+
+      {% if page.lang == "zh" %}
       <h2>代表论文</h2>
       <p class="legend"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者 &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> 已录用</p>
       {% else %}
-      <p class="lede">I work on video reasoning and the evaluation of vision-language models. I build benchmarks and run large-scale experiments to measure how these models reason about the visual world—and where they fail.</p>
-      <p class="lede">I'm also interested in Physical AI, world models, and making AI more trustworthy and interpretable. I'm part of <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro</a>, <a href="https://video-reason.com/?v=vbvr" target="_blank" rel="noopener noreferrer">VBVR</a>, and <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow&nbsp;AI</a>.</p>
       <h2>Selected Publications</h2>
       <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> accepted</p>
       {% endif %}
@@ -156,6 +171,16 @@
           </div>
         </article>
 
+        <article class="pub compact no-media" id="object-permanence">
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer">Training Object Permanence in World Models</a></h3>
+            <span class="venue pre">{% if page.lang == "zh" %}预印本 · 2026{% else %}Preprint · 2026{% endif %}</span>
+            <p class="authors">Haotian Zhang, Fengyuan Yu, Dezhi Luo, Haoran Sun, Zehong Zhao, Qingying Gao, Yihan Li, Siyuan An, Huayi Qin, Yilan Zhang, Zhengze Jiang, Pinyuan Feng, Renrui Zhang, Ziyu Guo, Letian Wang, Mengyue Yang, Kangfu Mei, <span class="me">Maijunxian Wang</span><span class="rest" id="top-authors-rest" hidden>, Ran Ji, Vikash Kumar, Freda Shi, Chandra Sripada, Vincent C. Müller, Philip Torr, Alan Yuille, Nikolaus Kriegeskorte, Felix Juefei-Xu, Lvmin Zhang, Jieneng Chen, Yilun Du, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="top-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}</button></p>
+            <p class="pub-summary">{% if page.lang == "zh" %}以认知科学启发的数据训练与评测视频模型的物体恒存性和实体性。我负责将 Blender 任务参数化，构建可规模化生成训练数据的生成器。{% else %}Training and evaluating object permanence and solidity in video models with cognitively grounded data. I developed parameterized Blender generators for scalable training-data production.{% endif %}</p>
+            <p class="res"><a href="https://arxiv.org/abs/2609.28654" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span><a href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer">{% if page.lang == "zh" %}项目网站{% else %}Website{% endif %}</a></p>
+          </div>
+        </article>
+
         <article class="pub compact">
           <div class="pub-media">
             <a class="media-link" href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 Demystifying Video Reasoning 项目网站{% else %}Open the Demystifying Video Reasoning project website{% endif %}">
@@ -186,7 +211,7 @@
           <div class="pub-text">
             <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
             <span class="venue accepted">CogSci 2026</span>
-            <p class="accolade">🏆 {% if page.lang == "zh" %}CogSci 2026 Sayan Gul 奖<br />（最佳本科生论文）{% else %}Sayan Gul Award · CogSci 2026<br />(Best Undergraduate Student Paper){% endif %}</p>
+            <p class="accolade">🏆 Sayan Gul Award · CogSci 2026</p>
             <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
             <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank" rel="noopener noreferrer">arXiv</a></p>
           </div>
@@ -234,7 +259,9 @@
 
       <h2>{% if page.lang == "zh" %}研究兴趣{% else %}Research Interests{% endif %}</h2>
       <div class="tags">
-        <span class="tag">{% if page.lang == "zh" %}视频推理{% else %}Video reasoning{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}视觉与视频推理{% else %}Visual &amp; video reasoning{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}认知科学驱动的 AI{% else %}Cognitively grounded AI{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}视频模型后训练{% else %}Video-model post-training{% endif %}</span>
         <span class="tag">{% if page.lang == "zh" %}视觉语言模型{% else %}Vision-language models{% endif %}</span>
         <span class="tag">{% if page.lang == "zh" %}基准与评测{% else %}Benchmarks &amp; evaluation{% endif %}</span>
         <span class="tag">Physical AI</span>

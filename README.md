@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme/language preferences, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Downloadable CV (kept in sync with the `markcv` source) |
+| `Maijunxian_Wang_CV.pdf` | Existing downloadable CV; retained pending approval of the next CV revision |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `archive/` | Retired assets (dated subfolders) |
@@ -33,6 +33,16 @@ and no video is loaded automatically when reduced motion is requested.
 
 ## Activity log
 
+- 2026-10-12: Updated both languages around visual reasoning, cognitively grounded
+  task design, scalable data construction, and video-model post-training. Identified
+  Hippocampal as the current research team and Grow AI Like a Child as a prior
+  affiliation. Added Omni-Reason as an explicitly ongoing project, without
+  unpublished results or private links. Added the public Object Permanence
+  preprint using arXiv:2609.28654v1 author order and Mark's confirmed generator
+  contribution. Standardized the CogSci recognition to "Sayan Gul Award".
+  Existing publication markers, page design, URLs, and downloadable CV are retained.
+  Validated Liquid rendering and English/Chinese desktop/mobile layouts, author
+  expansion, theme switching, and language navigation before publication.
 - 2026-09-02: Made light mode the default for first-time visitors while preserving
   a returning visitor's explicit theme selection.
 - 2026-09-02: Split English and Chinese into crawlable routes with canonical,
