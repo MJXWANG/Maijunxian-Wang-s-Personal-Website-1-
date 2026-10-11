@@ -98,10 +98,10 @@
 
     <main class="content" id="main-content" tabindex="-1">
       {% if page.lang == "zh" %}
-      <p class="lede">我研究视觉推理：模型如何直接在视觉与视频中推断、变换和预测世界状态，以及视觉如何成为与语言并行的推理媒介。我的工作将认知科学驱动的任务设计与模型分析，连接到大规模数据构造和视频生成模型的后训练。</p>
+      <p class="lede">我研究视觉作为一种区别于语言的推理媒介，探索模型如何直接通过视觉表征推断、变换和预测世界状态，而非依赖语言推理。我的工作将认知科学驱动的任务设计与大规模数据构造，连接到视频模型的后训练和分析。</p>
       <p class="lede">目前，我在 <a href="https://github.com/hipo-dev" target="_blank" rel="noopener noreferrer">Hippocampal</a> 研究团队主导 Omni-Reason 项目，也参与 <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Video-Reason</a> 社区的 VBVR 与 VBVR-Pro 研究。此前，我在 <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow AI Like a Child</a> 开展视觉语言模型的认知能力研究。</p>
       {% else %}
-      <p class="lede">I study visual reasoning: how models can infer, transform, and predict world states directly through images and video, and how vision can serve as a reasoning medium alongside language. My work connects cognitively grounded task design and model analysis with scalable data construction and video-generation model post-training.</p>
+      <p class="lede">I study vision as a distinct medium for reasoning, asking how models can infer, transform, and predict world states directly through visual representations rather than relying on language-based reasoning. My work connects cognitively grounded task design and scalable data construction with video-model post-training and analysis.</p>
       <p class="lede">I currently lead Omni-Reason within the <a href="https://github.com/hipo-dev" target="_blank" rel="noopener noreferrer">Hippocampal</a> research team. I also contribute to VBVR and VBVR-Pro in the <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Video-Reason</a> community. Previously, I studied cognitive abilities in vision-language models with <a href="https://growing-ai-like-a-child.github.io/" target="_blank" rel="noopener noreferrer">Grow AI Like a Child</a>.</p>
       {% endif %}
 
@@ -116,25 +116,93 @@
         </article>
       </section>
 
-      {% if page.lang == "zh" %}
-      <h2>代表论文</h2>
-      <p class="legend"><sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者 &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> 已录用</p>
-      {% else %}
-      <h2>Selected Publications</h2>
-      <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author &nbsp;·&nbsp; <span style="color:#3f8a52;font-weight:700">✓</span> accepted</p>
-      {% endif %}
+      <section class="publication-section" aria-labelledby="conference-heading">
+        <h2 id="conference-heading">{% if page.lang == "zh" %}会议论文{% else %}Conference Papers{% endif %}</h2>
+        <p class="legend">{% if page.lang == "zh" %}<sup>*</sup> 共同贡献 &nbsp;·&nbsp; <sup>†</sup> 共同指导 &nbsp;·&nbsp; <sup>✉</sup> 通讯作者 &nbsp;·&nbsp; <span class="accepted-mark">✓</span> 已录用{% else %}<sup>*</sup> equal contribution &nbsp;·&nbsp; <sup>†</sup> equal advising &nbsp;·&nbsp; <sup>✉</sup> corresponding author &nbsp;·&nbsp; <span class="accepted-mark">✓</span> accepted{% endif %}</p>
+        <div class="pubs">
+        <article class="pub publication" id="vbvr">
+          <div class="pub-media">
+            <a class="media-link" href="https://video-reason.com/" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 VBVR 项目网站{% else %}Open the VBVR project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr.mp4" poster="{{ asset_prefix }}/figs/vbvr_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
+            </a>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">A Very Big Video Reasoning Suite (VBVR)</a></h3>
+            <span class="venue accepted">ICML 2026</span>
+            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第一论文 · 2026 年 2 月{% else %}Hugging Face #1 Paper of the Month · Feb 2026{% endif %}</p>
+            <p class="authors" data-author-count="56" data-author-preview="12"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma<span class="rest" id="vbvr-authors-rest" hidden>, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}</button></p>
+            <p class="res">
+              <a href="https://arxiv.org/abs/2602.20159" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span>
+              <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
+              <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank" rel="noopener noreferrer">EvalKit</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank" rel="noopener noreferrer">Data</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank" rel="noopener noreferrer">Benchmark</a><span class="sep">·</span>
+              <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a><span class="sep">·</span>
+              <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank" rel="noopener noreferrer">Model</a>
+            </p>
+          </div>
+        </article>
 
-      <div class="pubs">
-        <article class="pub featured">
+        <article class="pub publication" id="flipset">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 FlipSet 图片{% else %}Enlarge the FlipSet image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" width="1500" height="497" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
+            <span class="venue accepted">CogSci 2026</span>
+            <p class="accolade">🏆 Sayan Gul Award — {% if page.lang == "zh" %}最佳本科生论文{% else %}Best Undergraduate Student Paper{% endif %}</p>
+            <p class="authors" data-author-count="9" data-author-preview="12"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
+            <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub publication" id="demystifying">
+          <div class="pub-media">
+            <a class="media-link" href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 Demystifying Video Reasoning 项目网站{% else %}Open the Demystifying Video Reasoning project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/demystify.mp4" poster="{{ asset_prefix }}/figs/demystify_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
+            </a>
+          </div>
+          <div class="pub-text">
+            <h3 class="pub-title"><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Demystifying Video Reasoning</a></h3>
+            <span class="venue accepted">ECCV 2026</span>
+            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第二论文 · 2026 年 3 月{% else %}Hugging Face #2 Paper of the Month · March 2026{% endif %}</p>
+            <p class="authors" data-author-count="14" data-author-preview="12">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin<span class="rest" id="demystifying-authors-rest" hidden>, Ziwei Liu, Lei Yang</span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="demystifying-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（14）{% else %}… show all (14){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（14）{% else %}… show all (14){% endif %}</button></p>
+            <p class="res"><a href="https://arxiv.org/abs/2603.16870" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Homepage</a></p>
+          </div>
+        </article>
+
+        <article class="pub publication" id="conservation">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 ConservationBench 图片{% else %}Enlarge the ConservationBench image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" width="1200" height="402" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
+            <span class="venue accepted">ICML 2026</span>
+            <p class="authors" data-author-count="10" data-author-preview="12">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
+            <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank" rel="noopener noreferrer">arXiv</a></p>
+          </div>
+        </article>
+
+        <article class="pub publication" id="metacognition">
+          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大感知元认知图片{% else %}Enlarge the perceptual metacognition image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" width="1200" height="515" /></button></div>
+          <div class="pub-text">
+            <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
+            <span class="venue accepted">CogSci 2026</span>
+            <p class="authors" data-author-count="6" data-author-preview="12">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
+          </div>
+        </article>
+        </div>
+      </section>
+
+      <section class="publication-section" aria-labelledby="preprints-heading">
+        <h2 id="preprints-heading">{% if page.lang == "zh" %}预印本{% else %}Preprints{% endif %}</h2>
+        <div class="pubs">
+        <article class="pub publication" id="vbvr-pro">
           <div class="pub-media">
             <a class="media-link" href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 VBVR-Pro 项目网站{% else %}Open the VBVR-Pro project website{% endif %}">
-              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr_pro.mp4" data-priority="true" poster="{{ asset_prefix }}/figs/vbvr_pro_poster.jpg" loop muted playsinline preload="none" width="640" height="360" aria-hidden="true"></video>
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr_pro.mp4" poster="{{ asset_prefix }}/figs/vbvr_pro_poster.jpg" loop muted playsinline preload="none" width="640" height="360" aria-hidden="true"></video>
             </a>
           </div>
           <div class="pub-text">
             <h3 class="pub-title"><a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</a></h3>
             <span class="venue pre">{% if page.lang == "zh" %}预印本{% else %}Preprint{% endif %}</span>
-            <p class="authors">Junxiang Xu<sup>*</sup>, Ruisi Wang<sup>*</sup>, Fanyi Pu<sup>*</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Ran Ji<sup>*</sup>, Tongxi Zhou<sup>*</sup>, Chenyang Gu, Jing Zuo, Hongcan Xiao, Yimeng Geng, Wanqi Yin, Wei Chen<span class="rest" id="vbvr-pro-authors-rest" hidden>, Oscar Qian, Zhengan Yan, Ziqi Huang, Haiwen Diao, Liang Pan, Bo Li, Xiangyu Fan, Dezhi Luo, Fengyuan Yu, Zehong Zhao, Qingying Gao, Tinghui Zhu, Yilan Zhang, Jingqi Tong, Pinyuan Feng, Zhengze Jiang, Letian Wang, Ziyu Guo, Renrui Zhang, Jieneng Chen, Sonia Joseph, Constantin Venhoff, Saman Motamed, Mengyue Yang, Chandra Sripada, Alan Yuille, Philip Torr, Lvmin Zhang, Vikash Kumar, Daniel Khashabi, Nikolaus Kriegeskorte, Raphaël Millière, Vincent C. Müller, Anyi Rao, Quan Wang, Ziwei Liu, Dahua Lin, Lei Yang, Hokin Deng<sup>✉</sup>, Zhongang Cai<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-pro-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}</button></p>
+            <p class="authors" data-author-count="52" data-author-preview="12">Junxiang Xu<sup>*</sup>, Ruisi Wang<sup>*</sup>, Fanyi Pu<sup>*</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Ran Ji<sup>*</sup>, Tongxi Zhou<sup>*</sup>, Chenyang Gu, Jing Zuo, Hongcan Xiao, Yimeng Geng, Wanqi Yin, Wei Chen<span class="rest" id="vbvr-pro-authors-rest" hidden>, Oscar Qian, Zhengan Yan, Ziqi Huang, Haiwen Diao, Liang Pan, Bo Li, Xiangyu Fan, Dezhi Luo, Fengyuan Yu, Zehong Zhao, Qingying Gao, Tinghui Zhu, Yilan Zhang, Jingqi Tong, Pinyuan Feng, Zhengze Jiang, Letian Wang, Ziyu Guo, Renrui Zhang, Jieneng Chen, Sonia Joseph, Constantin Venhoff, Saman Motamed, Mengyue Yang, Chandra Sripada, Alan Yuille, Philip Torr, Lvmin Zhang, Vikash Kumar, Daniel Khashabi, Nikolaus Kriegeskorte, Raphaël Millière, Vincent C. Müller, Anyi Rao, Quan Wang, Ziwei Liu, Dahua Lin, Lei Yang, Hokin Deng<sup>✉</sup>, Zhongang Cai<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-pro-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（52）{% else %}… show all (52){% endif %}</button></p>
             <p class="res">
               <a href="https://arxiv.org/abs/2608.26105" target="_blank" rel="noopener noreferrer">Paper</a><span class="sep">·</span>
               <a href="https://video-reason.com/?v=pro" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
@@ -148,126 +216,60 @@
           </div>
         </article>
 
-        <article class="pub featured">
+        <article class="pub publication" id="object-permanence">
           <div class="pub-media">
-            <a class="media-link" href="https://video-reason.com/" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 VBVR 项目网站{% else %}Open the VBVR project website{% endif %}">
-              <video class="zoom" data-src="{{ asset_prefix }}/figs/vbvr.mp4" poster="{{ asset_prefix }}/figs/vbvr_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
+            <a class="media-link" href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开物体恒存性项目网站{% else %}Open the Object Permanence project website{% endif %}">
+              <video class="zoom" data-src="{{ asset_prefix }}/figs/object_permanence.mp4" poster="{{ asset_prefix }}/figs/object_permanence_poster.jpg" loop muted playsinline preload="none" width="640" height="360" aria-hidden="true"></video>
             </a>
           </div>
-          <div class="pub-text">
-            <h3 class="pub-title"><a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">A Very Big Video Reasoning Suite (VBVR)</a></h3>
-            <span class="venue accepted">ICML 2026</span>
-            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第一论文 · 2026 年 2 月{% else %}Hugging Face #1 Paper of the Month · Feb 2026{% endif %}</p>
-            <p class="authors"><span class="me">Maijunxian Wang</span><sup>*</sup>, Ruisi Wang<sup>*</sup>, Juyi Lin<sup>*</sup>, Ran Ji<sup>*</sup>, Thaddäus Wiedemer, Qingying Gao, Dezhi Luo, Yaoyao Qian, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma<span class="rest" id="vbvr-authors-rest" hidden>, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, Jiachen Li, Hanwen Xing, Tianqi Zhao, Fengyuan Yu, Weihang Xiao, Yizheng Jiao, Jianheng Hou, Danyang Zhang, Pengcheng Xu, Boyang Zhong, Zehong Zhao, Gaoyun Fang, John Kitaoka, Yile Xu, Hua Xu, Kenton Blacutt, Tin Nguyen, Siyuan Song, Haoran Sun, Shaoyue Wen, Linyang He, Runming Wang, Yanzhi Wang, Mengyue Yang, Ziqiao Ma, Raphaël Millière, Freda Shi, Nuno Vasconcelos, Daniel Khashabi, Alan Yuille, Yilun Du, Ziming Liu, Bo Li, Dahua Lin, Ziwei Liu, Vikash Kumar, Yijiang Li, Lei Yang, Zhongang Cai<sup>✉</sup>, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="vbvr-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（56）{% else %}… show all (56){% endif %}</button></p>
-            <p class="res">
-              <a href="https://arxiv.org/abs/2602.20159" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span>
-              <a href="https://video-reason.com/" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
-              <a href="https://github.com/Video-Reason/VBVR-EvalKit" target="_blank" rel="noopener noreferrer">EvalKit</a><span class="sep">·</span>
-              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Dataset" target="_blank" rel="noopener noreferrer">Data</a><span class="sep">·</span>
-              <a href="https://huggingface.co/datasets/Video-Reason/VBVR-Bench-Data" target="_blank" rel="noopener noreferrer">Benchmark</a><span class="sep">·</span>
-              <a href="https://huggingface.co/spaces/Video-Reason/VBVR-Bench-Leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a><span class="sep">·</span>
-              <a href="https://huggingface.co/Video-Reason/VBVR-Wan2.2" target="_blank" rel="noopener noreferrer">Model</a>
-            </p>
-          </div>
-        </article>
-
-        <article class="pub compact no-media" id="object-permanence">
           <div class="pub-text">
             <h3 class="pub-title"><a href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer">Training Object Permanence in World Models</a></h3>
             <span class="venue pre">{% if page.lang == "zh" %}预印本 · 2026{% else %}Preprint · 2026{% endif %}</span>
-            <p class="authors">Haotian Zhang, Fengyuan Yu, Dezhi Luo, Haoran Sun, Zehong Zhao, Qingying Gao, Yihan Li, Siyuan An, Huayi Qin, Yilan Zhang, Zhengze Jiang, Pinyuan Feng, Renrui Zhang, Ziyu Guo, Letian Wang, Mengyue Yang, Kangfu Mei, <span class="me">Maijunxian Wang</span><span class="rest" id="top-authors-rest" hidden>, Ran Ji, Vikash Kumar, Freda Shi, Chandra Sripada, Vincent C. Müller, Philip Torr, Alan Yuille, Nikolaus Kriegeskorte, Felix Juefei-Xu, Lvmin Zhang, Jieneng Chen, Yilun Du, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="top-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}</button></p>
-            <p class="pub-summary">{% if page.lang == "zh" %}以认知科学启发的数据训练与评测视频模型的物体恒存性和实体性。我负责将 Blender 任务参数化，构建可规模化生成训练数据的生成器。{% else %}Training and evaluating object permanence and solidity in video models with cognitively grounded data. I developed parameterized Blender generators for scalable training-data production.{% endif %}</p>
-            <p class="res"><a href="https://arxiv.org/abs/2609.28654" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span><a href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer">{% if page.lang == "zh" %}项目网站{% else %}Website{% endif %}</a></p>
+            <p class="authors" data-author-count="31" data-author-preview="12">Haotian Zhang, Fengyuan Yu, Dezhi Luo, Haoran Sun, Zehong Zhao, Qingying Gao, Yihan Li, Siyuan An, Huayi Qin, Yilan Zhang, Zhengze Jiang, Pinyuan Feng<span class="rest" id="object-permanence-authors-rest" hidden>, Renrui Zhang, Ziyu Guo, Letian Wang, Mengyue Yang, Kangfu Mei, <span class="me">Maijunxian Wang</span>, Ran Ji, Vikash Kumar, Freda Shi, Chandra Sripada, Vincent C. Müller, Philip Torr, Alan Yuille, Nikolaus Kriegeskorte, Felix Juefei-Xu, Lvmin Zhang, Jieneng Chen, Yilun Du, Hokin Deng<sup>✉</sup></span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="object-permanence-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（31）{% else %}… show all (31){% endif %}</button></p>
+            <p class="res">
+              <a href="https://arxiv.org/abs/2609.28654" target="_blank" rel="noopener noreferrer">Paper</a><span class="sep">·</span>
+              <a href="https://object-permanence.world/" target="_blank" rel="noopener noreferrer">Website</a><span class="sep">·</span>
+              <a href="https://github.com/hokindeng/object-permanence" target="_blank" rel="noopener noreferrer">Code</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Hokin/object-permanence" target="_blank" rel="noopener noreferrer">Data</a><span class="sep">·</span>
+              <a href="https://huggingface.co/Hokin/PWM-WROP" target="_blank" rel="noopener noreferrer">Model</a><span class="sep">·</span>
+              <a href="https://huggingface.co/datasets/Hokin/object-permanence-benchmark" target="_blank" rel="noopener noreferrer">Benchmark</a><span class="sep">·</span>
+              <a href="https://object-permanence.world/leaderboard" target="_blank" rel="noopener noreferrer">Leaderboard</a>
+            </p>
           </div>
         </article>
+        </div>
+      </section>
 
-        <article class="pub compact">
-          <div class="pub-media">
-            <a class="media-link" href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer" aria-label="{% if page.lang == "zh" %}打开 Demystifying Video Reasoning 项目网站{% else %}Open the Demystifying Video Reasoning project website{% endif %}">
-              <video class="zoom" data-src="{{ asset_prefix }}/figs/demystify.mp4" poster="{{ asset_prefix }}/figs/demystify_poster.jpg" loop muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video>
-            </a>
-          </div>
-          <div class="pub-text">
-            <h3 class="pub-title"><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Demystifying Video Reasoning</a></h3>
-            <span class="venue accepted">ECCV 2026</span>
-            <p class="accolade">🤗 {% if page.lang == "zh" %}Hugging Face 当月第二论文 · 2026 年 3 月{% else %}Hugging Face #2 Paper of the Month · March 2026{% endif %}</p>
-            <p class="authors">Ruisi Wang, Zhongang Cai<sup>✉</sup>, Fanyi Pu, Junxiang Xu, Wanqi Yin, <span class="me">Maijunxian Wang</span>, Ran Ji, Chenyang Gu, Bo Li, Ziqi Huang, Hokin Deng, Dahua Lin, Ziwei Liu, Lei Yang</p>
-            <p class="res"><a href="https://arxiv.org/abs/2603.16870" target="_blank" rel="noopener noreferrer">arXiv</a><span class="sep">·</span><a href="https://www.wruisi.com/demystifying_video_reasoning" target="_blank" rel="noopener noreferrer">Homepage</a></p>
-          </div>
-        </article>
-
-        <article class="pub compact">
-          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 ConservationBench 图片{% else %}Enlarge the ConservationBench image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/conservation.jpg" alt="ConservationBench tasks" loading="lazy" width="1200" height="402" /></button></div>
-          <div class="pub-text">
-            <h3 class="pub-title">Vision Language Models Cannot Reason About Physical Transformation (ConservationBench)</h3>
-            <span class="venue accepted">ICML 2026</span>
-            <p class="authors">Dezhi Luo<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Bingyang Wang, Siheng Wang, Pinyuan Feng, Pooyan Rahmanzadehgervi, Ziqiao Ma, Hokin Deng</p>
-            <p class="res"><a href="https://arxiv.org/abs/2603.07109" target="_blank" rel="noopener noreferrer">arXiv</a></p>
-          </div>
-        </article>
-
-        <article class="pub compact">
-          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大 FlipSet 图片{% else %}Enlarge the FlipSet image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/egocentric.jpg" alt="FlipSet benchmark design" loading="lazy" width="1500" height="497" /></button></div>
-          <div class="pub-text">
-            <h3 class="pub-title">Egocentric Bias in Vision-Language Models (FlipSet)</h3>
-            <span class="venue accepted">CogSci 2026</span>
-            <p class="accolade">🏆 Sayan Gul Award · CogSci 2026</p>
-            <p class="authors"><span class="me">Maijunxian Wang</span><sup>*✉</sup>, Yijiang Li<sup>*</sup>, Bingyang Wang, Tianwei Zhao, Ran Ji, Qingying Gao<sup>†</sup>, Emmy Liu<sup>†</sup>, Hokin Deng<sup>†</sup>, Dezhi Luo<sup>✉</sup></p>
-            <p class="res"><a href="https://arxiv.org/abs/2602.15892" target="_blank" rel="noopener noreferrer">arXiv</a></p>
-          </div>
-        </article>
-
-        <article class="pub compact">
-          <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大感知元认知图片{% else %}Enlarge the perceptual metacognition image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/metacog.jpg" alt="Two-stage metacognition paradigm" loading="lazy" width="1200" height="515" /></button></div>
-          <div class="pub-text">
-            <h3 class="pub-title">Assessing Perceptual Metacognition in Vision-Language Models</h3>
-            <span class="venue accepted">CogSci 2026</span>
-            <p class="authors">Ran Ji<sup>*✉</sup>, <span class="me">Maijunxian Wang</span><sup>*</sup>, Qingying Gao, Yijiang Li, Hokin Deng, Dezhi Luo<sup>✉</sup></p>
-          </div>
-        </article>
-
-        <article class="pub compact">
+      <section class="publication-section" aria-labelledby="workshops-heading">
+        <h2 id="workshops-heading">{% if page.lang == "zh" %}研讨会论文{% else %}Workshop Papers{% endif %}</h2>
+        <div class="pubs">
+        <article class="pub publication" id="increasing-computation">
           <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大认知控制图片{% else %}Enlarge the cognitive control image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/cogcontrol.jpg" alt="Cognitive control task design" loading="lazy" width="1200" height="675" /></button></div>
           <div class="pub-text">
             <h3 class="pub-title">Increasing Computation Resolves Conflicts in Vision Language Models</h3>
             <span class="venue accepted">MMRAgI @ CVPR 2026</span>
-            <p class="authors">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
+            <p class="authors" data-author-count="10" data-author-preview="12">Bingyang Wang<sup>*✉</sup>, Yijiang Li<sup>*✉</sup>, Yitong Qiao, <span class="me">Maijunxian Wang</span>, Tianwei Zhao, Yucheng Sun, Binyue Deng, Hokin Deng, Nuno Vasconcelos, Dezhi Luo<sup>✉</sup></p>
             <p class="res"><a href="https://arxiv.org/abs/2505.18969" target="_blank" rel="noopener noreferrer">arXiv</a></p>
           </div>
         </article>
 
-        <article class="pub compact">
+        <article class="pub publication" id="perceptual-constancy">
           <div class="pub-media"><button class="image-zoom" type="button" aria-label="{% if page.lang == "zh" %}放大感知恒常性图片{% else %}Enlarge the perceptual constancy image{% endif %}"><img class="zoom" src="{{ asset_prefix }}/figs/constancy.jpg" alt="Perceptual constancy sample tasks" loading="lazy" width="1200" height="686" /></button></div>
           <div class="pub-text">
             <h3 class="pub-title">Probing Perceptual Constancy in Large Vision-Language Models</h3>
             <span class="venue accepted">ES-Reasoning @ ICLR 2026</span>
-            <p class="authors">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</p>
+            <p class="authors" data-author-count="17" data-author-preview="12">Haoran Sun<sup>✉</sup>, Bingyang Wang, Suyang Yu, Yijiang Li, Qingying Gao, Haiyun Lyu, Lianyu Huang, Zelong Hong, Jiahui Ge, Qianli Ma, Hang He, Yifan Zhou<span class="rest" id="perceptual-constancy-authors-rest" hidden>, Lingzi Guo, Lantao Mei, <span class="me">Maijunxian Wang</span>, Dezhi Luo, Hokin Deng</span> <button type="button" class="morebtn" aria-expanded="false" aria-controls="perceptual-constancy-authors-rest" data-more-label="{% if page.lang == "zh" %}… 展开全部（17）{% else %}… show all (17){% endif %}" data-less-label="{% if page.lang == "zh" %}收起{% else %}show less{% endif %}">{% if page.lang == "zh" %}… 展开全部（17）{% else %}… show all (17){% endif %}</button></p>
             <p class="res"><a href="https://arxiv.org/abs/2502.10273" target="_blank" rel="noopener noreferrer">arXiv</a></p>
           </div>
         </article>
-
-        <article class="pub compact no-media">
-          <div class="pub-text">
-            <h3 class="pub-title">AGI as Second Being: The Structural-Generative Ontology of Intelligence</h3>
-            <span class="venue pre">{% if page.lang == "zh" %}预印本{% else %}Preprint{% endif %}</span>
-            <blockquote class="pullquote">{% if page.lang == "zh" %}「真正的智能，只存在于一个系统能够生成新结构、将其协调为理由，并在时间中维持其同一性之时。」{% else %}“True intelligence exists only when a system can generate new structures, coordinate them into reasons, and sustain its identity over time.”{% endif %}</blockquote>
-            <p class="authors"><span class="me">Maijunxian Wang</span>, Ran Ji</p>
-            <p class="res"><a href="https://arxiv.org/abs/2509.02089" target="_blank" rel="noopener noreferrer">arXiv</a></p>
-          </div>
-        </article>
-      </div>
+        </div>
+      </section>
 
       <h2>{% if page.lang == "zh" %}研究兴趣{% else %}Research Interests{% endif %}</h2>
       <div class="tags">
-        <span class="tag">{% if page.lang == "zh" %}视觉与视频推理{% else %}Visual &amp; video reasoning{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}认知科学驱动的 AI{% else %}Cognitively grounded AI{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}视频模型后训练{% else %}Video-model post-training{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}视觉语言模型{% else %}Vision-language models{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}基准与评测{% else %}Benchmarks &amp; evaluation{% endif %}</span>
-        <span class="tag">Physical AI</span>
-        <span class="tag">{% if page.lang == "zh" %}世界模型{% else %}World models{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}可解释性{% else %}Interpretability{% endif %}</span>
-        <span class="tag">{% if page.lang == "zh" %}AI 安全{% else %}AI safety{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}视觉推理{% else %}Visual Reasoning{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}视频生成与世界模型{% else %}Video Generation &amp; World Models{% endif %}</span>
+        <span class="tag">{% if page.lang == "zh" %}认知科学驱动的 AI{% else %}Cognitively Grounded AI{% endif %}</span>
       </div>
 
       <footer>© 2026 {% if page.lang == "zh" %}王麦俊贤{% else %}Maijunxian Wang{% endif %} · mjxwang@berkeley.edu</footer>

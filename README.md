@@ -19,6 +19,8 @@ a shared Jekyll layout.
 | `Maijunxian_Wang_CV.pdf` | Existing downloadable CV; retained pending approval of the next CV revision |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
+| `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
+| `figs/object_permanence_poster.jpg` | TOP poster frame extracted from the demonstration video |
 | `archive/` | Retired assets (dated subfolders) |
 
 ## Structure
@@ -27,12 +29,50 @@ a shared Jekyll layout.
 `_layouts/home.html` layout. GitHub Pages/Jekyll renders `/` in English and `/zh/`
 in Chinese. Update both branches of localized copy in the layout when wording changes.
 
-VBVR-Pro and VBVR are featured cards. Other publications use compact cards. Only
-the lead VBVR-Pro video loads immediately; remaining videos load near the viewport,
-and no video is loaded automatically when reduced motion is requested.
+Omni-Reason remains a separate, text-only ongoing project. Publications are grouped
+into Conference Papers, Preprints, and Workshop Papers. All publication cards use
+the same left-media/right-text layout on desktop and stack media above text on
+phones. Thumbnails use a 16:9 frame without cropping the source. Videos load near
+the viewport, and none loads automatically when reduced motion is requested.
+
+Every author list shows at most the first **12 authors** in original order, matching
+the established VBVR preview length. Longer lists expand in place; Mark's position
+does not change this cutoff. Preserve all equal-contribution/advising/corresponding
+markers when editing author lists. Research Interests is intentionally limited to
+Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
+
+### TOP media and resource provenance
+
+- Source page: https://hokindeng.com/
+- Video: https://hokindeng.com/images/object-permanence.mp4
+- The local video is an unchanged 2,528,138-byte copy (5 seconds, H.264, 1920×1080).
+  SHA-256: `5da90f91a9e558b7fed8d8fb384abf3d6096d7a7dba57191d889b665a873087e`.
+- The poster is a 640px-wide frame at 1 second; publication media uses the same
+  local asset naming convention as the existing VBVR videos.
+- Paper, Website, Code, Data, Model, Benchmark, and Leaderboard destinations match
+  the source homepage's TOP card as checked on 2026-10-12.
 
 ## Activity log
 
+- 2026-10-12: At Mark's request, retained the formal Sayan Gul Award name and
+  restored its explanatory descriptor: "Best Undergraduate Student Paper" in
+  English and "最佳本科生论文" in Chinese. Dezhi Luo's July 2026 update at
+  https://ihzedoul.com/ explicitly describes the FlipSet award this way; checked
+  on 2026-10-12. This is an undergraduate-paper distinction, not the separate
+  Marr Prize or an unrestricted conference-wide Best Paper claim.
+- 2026-10-12: Prepared the approved second layout/content revision locally:
+  changed the opening to vision as a reasoning medium distinct from language,
+  reduced interests to three, grouped nine papers into five conference papers,
+  two preprints and two workshop papers, standardized publication media cards,
+  added TOP's public video/resources, and applied a fixed 12-author preview to
+  every list. Removed TOP's one-off contribution paragraph for consistency and
+  removed AGI as Second Being from the rendered homepage at Mark's request;
+  its previous entry remains recoverable in commit
+  `a73450f57dc4ff5cb5605c436287b5fbd682946d`. No source paper or file was deleted.
+  The downloadable CV and the existing visual theme remain unchanged.
+  Mark explicitly authorized publication. Strict bilingual rendering and 14
+  desktop/mobile viewport checks passed, as did author expansion, theme/language
+  navigation, lazy video playback and image lightbox checks.
 - 2026-10-12: Updated both languages around visual reasoning, cognitively grounded
   task design, scalable data construction, and video-model post-training. Identified
   Hippocampal as the current research team and Grow AI Like a Child as a prior
