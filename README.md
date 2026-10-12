@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Existing downloadable CV; retained pending approval of the next CV revision |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, updated 2026-10-12 from Mark's approved content |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -58,6 +58,18 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-12: Updated the downloadable CV after Mark explicitly requested both
+  the new English document and publication on his website. The two-page PDF
+  separates the user-confirmed Omni-Reason corpus (24M input-target video pairs
+  across 300 tasks) from single-model capability across 100 CV tasks, retains
+  the research-in-progress label, and updates project-level contributions,
+  education, award wording, and conference/preprint/workshop groupings. Both
+  pages were visually inspected; compilation, text bounds and 13 PDF link
+  annotations passed validation. SHA-256:
+  `50d36614c52a52cb50fe633b9fbfdad17503d00ce7c1be8ec54091b89621955a`.
+  No homepage copy, layout or private applicant material was changed. The
+  previous PDF remains recoverable from commit
+  `9ae31e5faef32bd0ddcf102a77e2c9e606340bcf`.
 - 2026-10-12: Prepared an English-default refinement locally at Mark's request.
   Removed saved-language redirects and persistence so visiting the main URL never
   switches to Chinese automatically. Explicit Chinese URLs and manual switching
