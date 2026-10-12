@@ -58,6 +58,17 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-12: Refined the downloadable two-page CV after Mark approved the
+  title-first text and explicitly requested website publication. Page one now
+  contains education, interests, the award and publications; page two keeps all
+  project-level research experience together. Paper titles are clickable, long
+  author lists preserve order and equal-contribution markers, and body emphasis
+  is limited to the two main Omni-Reason results. TOP now specifies parameterizing
+  100 team-authored, single-scene Blender scripts. Both pages passed visual
+  inspection; compilation, text bounds and all 13 link annotations passed.
+  PDF SHA-256: `b50d1b0b9dd8b6109728dba0bfd92347a8dcd7807de5fc82cb2a466b6d55619e`.
+  Homepage content, layout and CV URL are unchanged. The prior downloadable PDF
+  remains recoverable from commit `1df0bf5da62bd0617f3dc01d3c3e92bdfbe4ce13`.
 - 2026-10-12: Updated the downloadable CV after Mark explicitly requested both
   the new English document and publication on his website. The two-page PDF
   separates the user-confirmed Omni-Reason corpus (24M input-target video pairs
