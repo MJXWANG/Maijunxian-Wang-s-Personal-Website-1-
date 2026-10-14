@@ -58,6 +58,10 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-14: Underlined only "Sayan Gul Award" in the CV's Egocentric Bias
+  publication entry, at Mark's request. Re-exported the PDF; no content or
+  homepage change. Kept this small update to compilation and publication,
+  without repeated live-download verification.
 - 2026-10-14: Updated only the downloadable CV and this README at Mark's explicit
   request. Omni-Reason now reports approximately 30M input-target video pairs
   across 350 data tasks, separately from the single-model 100-CV-task result.
