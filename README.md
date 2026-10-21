@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, synchronized 2026-10-21 from Mark's approved 2026-10-20 correction |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV with clickable header logos, synchronized 2026-10-21 |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -58,6 +58,15 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-21: Published the approved CV header-logo revision at Mark's explicit
+  request. Website, Google Scholar and GitHub links now use clickable icons in
+  the PDF; the email remains readable. Copied the checked two-page PDF unchanged:
+  216,500 bytes, SHA-256
+  `4bf40f9924487674716150637728cbbbb077a181d782cd1a665d4d5da4648296`.
+  All body text and 13 link destinations are preserved. Only the PDF and this
+  README are included; the homepage and sidebar retain their existing design.
+  The prior PDF remains recoverable from commit
+  `f1f1080a56e936172faff8e8239a60e93c769692`.
 - 2026-10-21: Synchronized only the downloadable CV from the existing, checked
   two-page PDF at Mark's explicit request. The 2026-10-20 correction sets Davis
   GPA to 3.973/4.0 and attendance to Fall 2023–Summer 2025. Copied the source
