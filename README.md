@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, updated 2026-10-14 from Mark's approved content |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, synchronized 2026-10-21 from Mark's approved 2026-10-20 correction |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -58,6 +58,15 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-21: Synchronized only the downloadable CV from the existing, checked
+  two-page PDF at Mark's explicit request. The 2026-10-20 correction sets Davis
+  GPA to 3.973/4.0 and attendance to Fall 2023–Summer 2025. Copied the source
+  byte for byte without regenerating it or changing its layout. SHA-256:
+  `390c58573db5d56346820ea228892aeaf5d82e2ea96118d2f99c230889e46475`.
+  Homepage content, layout, publications and the existing download URL are
+  unchanged. Publication uses the existing GitHub Pages build from `main` at `/`.
+  The previous PDF remains recoverable from commit
+  `5bf09854accd8ad3bb9b1c143db08cc53f7c618b`.
 - 2026-10-14: Underlined only "Sayan Gul Award" in the CV's Egocentric Bias
   publication entry, at Mark's request. Re-exported the PDF; no content or
   homepage change. Kept this small update to compilation and publication,
