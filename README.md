@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Two-page English research CV with clickable header logos, synchronized 2026-10-21 |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV with balanced header logos and separate click areas, synchronized 2026-10-21 |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -58,6 +58,14 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 ## Activity log
 
+- 2026-10-21: Published Mark's approved balanced-header CV. Removed the PDF
+  header's vertical divider and grouped the three link icons more closely while
+  keeping separate padded click areas. The two-page body and all 13 URLs remain
+  unchanged. Copied the checked PDF exactly: 216,376 bytes, SHA-256
+  `ed664dbc64767fe18357d4115263406cbda845b16491a9cf1a149ad56ccf25a3`.
+  This update includes only the CV PDF and README. The original download URL,
+  homepage and sidebar are unchanged. The previous published PDF remains
+  recoverable from commit `e0022056110ee249bfdaa2216749e9fc47a89e15`.
 - 2026-10-21: Published the approved CV header-logo revision at Mark's explicit
   request. Website, Google Scholar and GitHub links now use clickable icons in
   the PDF; the email remains readable. Copied the checked two-page PDF unchanged:
