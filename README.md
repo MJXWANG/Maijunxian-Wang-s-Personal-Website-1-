@@ -60,7 +60,7 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
 
 - 2026-11-14: Updated the downloadable CV at Mark's explicit request. Omni-Reason
   now records his leadership of post-training and scaling experiments, with one
-  checkpoint solving 117 CV tasks, including 16 tasks excluded from fine-tuning.
+  checkpoint solving 117 CV tasks, including 16 tasks excluded from our training.
   The data-platform bullet reports approximately 30M video pairs across 340 tasks
   supporting training, evaluation, and scaling studies. The project remains
   research in progress. The existing two-page layout and download URL are retained;
