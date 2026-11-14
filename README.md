@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Two-page English research CV with balanced header logos and separate click areas, synchronized 2026-10-21 |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, updated 2026-11-14 with Omni-Reason post-training/scaling responsibilities and 117-task results |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -57,6 +57,15 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
   the source homepage's TOP card as checked on 2026-10-12.
 
 ## Activity log
+
+- 2026-11-14: Updated the downloadable CV at Mark's explicit request. Omni-Reason
+  now records his leadership of post-training and scaling experiments, with one
+  checkpoint solving 117 CV tasks, including 16 tasks excluded from fine-tuning.
+  The data-platform bullet reports approximately 30M video pairs across 340 tasks
+  supporting training, evaluation, and scaling studies. The project remains
+  research in progress. The existing two-page layout and download URL are retained;
+  homepage copy and other assets are unchanged. The previous website PDF remains
+  recoverable from commit `2ee563f3de5088ab25f891fbf67037fc87cfae8c`.
 
 - 2026-10-21: Published Mark's approved balanced-header CV. Removed the PDF
   header's vertical divider and grouped the three link icons more closely while
