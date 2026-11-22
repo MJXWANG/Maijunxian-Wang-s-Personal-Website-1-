@@ -16,7 +16,7 @@ a shared Jekyll layout.
 | `assets/site.css` | Responsive layout, themes, publication cards, and accessibility styles |
 | `assets/site.js` | Theme preference, email copy, lazy video loading, author expansion, and image lightbox |
 | `Maijunxian_Wang.jpg` | Profile photo |
-| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, updated 2026-11-22 with Omni-Reason listed as a manuscript in preparation |
+| `Maijunxian_Wang_CV.pdf` | Two-page English research CV, updated 2026-11-22 with Omni-Reason as a manuscript in preparation and clearer publication group headings |
 | `figs/vbvr_pro.mp4` | Lightweight VBVR-Pro publication video used on the homepage |
 | `figs/vbvr_pro_poster.jpg` | Poster frame shown before the VBVR-Pro video loads |
 | `figs/object_permanence.mp4` | Public TOP demonstration video, aligned with Hokin Deng's homepage |
@@ -57,6 +57,12 @@ Visual Reasoning, Video Generation & World Models, and Cognitively Grounded AI.
   the source homepage's TOP card as checked on 2026-10-12.
 
 ## Activity log
+
+- 2026-11-22: Strengthened the CV's three publication group headings with larger
+  bold uppercase text and light-gray rules: Conference Papers, Preprints &
+  Manuscripts, and Workshop Papers. Retained two pages and all research content.
+  The prior PDF is recoverable from commit
+  `59cfa058b933c9c67f867e45ed4758b5683dfe4f`.
 
 - 2026-11-22: Updated the downloadable CV at Mark's explicit request. Added
   Omni-Reason under Preprints and Manuscripts, labeled "Manuscript in preparation,
